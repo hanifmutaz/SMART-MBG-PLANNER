@@ -8,10 +8,8 @@ const JENJANG_DATA = {
         akgPct: 97, akgTarget: 85,
         warnItems: ['Ayam', 'Sayur hijau', 'Telur'],
         AKG: { kal: 2100, pro: 56, kar: 300, lem: 65 },
-        barData: [89, 88, 72, 85, 87],
-        barDataPro: [80, 85, 65, 90, 82],
-        barDataLem: [92, 88, 78, 88, 90],
-        barDataKar: [95, 92, 80, 92, 94],
+        barData: [89, 88, 72, 85, 87], barDataPro: [80, 85, 65, 90, 82],
+        barDataLem: [92, 88, 78, 88, 90], barDataKar: [95, 92, 80, 92, 94],
         warnDays: [2],
         menus: [
             { name: 'Nasi Kuning + Ayam Bakar', items: [{ nama: 'Nasi kuning', kal: 220, pro: 5, kar: 46, lem: 2 }, { nama: 'Ayam bakar', kal: 220, pro: 28, kar: 8, lem: 9 }, { nama: 'Tumis kangkung', kal: 60, pro: 3, kar: 6, lem: 3 }, { nama: 'Tempe goreng', kal: 180, pro: 11, kar: 10, lem: 12 }, { nama: 'Susu UHT', kal: 120, pro: 6, kar: 12, lem: 5 }, { nama: 'Pisang', kal: 89, pro: 1, kar: 23, lem: 0 }] },
@@ -27,10 +25,8 @@ const JENJANG_DATA = {
         akgPct: 93, akgTarget: 85,
         warnItems: ['Daging sapi', 'Brokoli'],
         AKG: { kal: 2400, pro: 65, kar: 350, lem: 80 },
-        barData: [91, 92, 88, 94, 90],
-        barDataPro: [85, 90, 82, 88, 86],
-        barDataLem: [88, 85, 90, 92, 87],
-        barDataKar: [94, 96, 85, 95, 93],
+        barData: [91, 92, 88, 94, 90], barDataPro: [85, 90, 82, 88, 86],
+        barDataLem: [88, 85, 90, 92, 87], barDataKar: [94, 96, 85, 95, 93],
         warnDays: [],
         menus: [
             { name: 'Nasi + Daging Rendang', items: [{ nama: 'Nasi putih', kal: 240, pro: 5, kar: 52, lem: 0 }, { nama: 'Rendang daging', kal: 310, pro: 32, kar: 8, lem: 18 }, { nama: 'Sayur asem', kal: 75, pro: 4, kar: 10, lem: 2 }, { nama: 'Tempe bacem', kal: 200, pro: 12, kar: 14, lem: 11 }, { nama: 'Susu UHT', kal: 130, pro: 7, kar: 13, lem: 5 }, { nama: 'Pisang', kal: 89, pro: 1, kar: 23, lem: 0 }] },
@@ -46,10 +42,8 @@ const JENJANG_DATA = {
         akgPct: 89, akgTarget: 85,
         warnItems: ['Ikan tuna', 'Alpukat'],
         AKG: { kal: 2650, pro: 72, kar: 400, lem: 90 },
-        barData: [87, 90, 82, 88, 85],
-        barDataPro: [82, 88, 78, 85, 80],
-        barDataLem: [85, 88, 80, 90, 84],
-        barDataKar: [90, 93, 82, 91, 88],
+        barData: [87, 90, 82, 88, 85], barDataPro: [82, 88, 78, 85, 80],
+        barDataLem: [85, 88, 80, 90, 84], barDataKar: [90, 93, 82, 91, 88],
         warnDays: [2, 4],
         menus: [
             { name: 'Nasi + Steak Ayam Grill', items: [{ nama: 'Nasi merah', kal: 220, pro: 5, kar: 45, lem: 2 }, { nama: 'Ayam grill', kal: 380, pro: 42, kar: 5, lem: 18 }, { nama: 'Salad sayur', kal: 80, pro: 4, kar: 10, lem: 3 }, { nama: 'Tempe panggang', kal: 190, pro: 13, kar: 11, lem: 12 }, { nama: 'Susu UHT', kal: 130, pro: 7, kar: 13, lem: 5 }, { nama: 'Apel', kal: 80, pro: 0, kar: 21, lem: 0 }] },
@@ -62,36 +56,9 @@ const JENJANG_DATA = {
 };
 
 const LAPORAN_DATA = {
-    sd: {
-        avgAKG: 91, totalAnggaran: 'Rp 54,2jt', menuCount: 4, warnDays: 5,
-        histori: [
-            { periode: '24–28 Mar 2026', jenjang: 'SD', akg: 91, cost: 11960, status: 'ok' },
-            { periode: '17–21 Mar 2026', jenjang: 'SD', akg: 88, cost: 12100, status: 'ok' },
-            { periode: '10–14 Mar 2026', jenjang: 'SD', akg: 79, cost: 11700, status: 'warn' },
-            { periode: '3–7 Mar 2026', jenjang: 'SD', akg: 93, cost: 12300, status: 'ok' },
-            { periode: '24–28 Feb 2026', jenjang: 'SD', akg: 90, cost: 11900, status: 'ok' }
-        ]
-    },
-    smp: {
-        avgAKG: 93, totalAnggaran: 'Rp 68,4jt', menuCount: 4, warnDays: 2,
-        histori: [
-            { periode: '24–28 Mar 2026', jenjang: 'SMP', akg: 93, cost: 14200, status: 'ok' },
-            { periode: '17–21 Mar 2026', jenjang: 'SMP', akg: 91, cost: 13800, status: 'ok' },
-            { periode: '10–14 Mar 2026', jenjang: 'SMP', akg: 87, cost: 14100, status: 'ok' },
-            { periode: '3–7 Mar 2026', jenjang: 'SMP', akg: 95, cost: 14500, status: 'ok' },
-            { periode: '24–28 Feb 2026', jenjang: 'SMP', akg: 82, cost: 13600, status: 'warn' }
-        ]
-    },
-    sma: {
-        avgAKG: 89, totalAnggaran: 'Rp 63,8jt', menuCount: 4, warnDays: 7,
-        histori: [
-            { periode: '24–28 Mar 2026', jenjang: 'SMA', akg: 89, cost: 15800, status: 'ok' },
-            { periode: '17–21 Mar 2026', jenjang: 'SMA', akg: 85, cost: 15200, status: 'ok' },
-            { periode: '10–14 Mar 2026', jenjang: 'SMA', akg: 76, cost: 14800, status: 'warn' },
-            { periode: '3–7 Mar 2026', jenjang: 'SMA', akg: 91, cost: 15600, status: 'ok' },
-            { periode: '24–28 Feb 2026', jenjang: 'SMA', akg: 78, cost: 14900, status: 'warn' }
-        ]
-    }
+    sd: { avgAKG: 91, totalAnggaran: 'Rp 54,2jt', menuCount: 4, warnDays: 5, histori: [{ periode: '24–28 Mar 2026', jenjang: 'SD', akg: 91, cost: 11960, status: 'ok' }, { periode: '17–21 Mar 2026', jenjang: 'SD', akg: 88, cost: 12100, status: 'ok' }, { periode: '10–14 Mar 2026', jenjang: 'SD', akg: 79, cost: 11700, status: 'warn' }, { periode: '3–7 Mar 2026', jenjang: 'SD', akg: 93, cost: 12300, status: 'ok' }, { periode: '24–28 Feb 2026', jenjang: 'SD', akg: 90, cost: 11900, status: 'ok' }] },
+    smp: { avgAKG: 93, totalAnggaran: 'Rp 68,4jt', menuCount: 4, warnDays: 2, histori: [{ periode: '24–28 Mar 2026', jenjang: 'SMP', akg: 93, cost: 14200, status: 'ok' }, { periode: '17–21 Mar 2026', jenjang: 'SMP', akg: 91, cost: 13800, status: 'ok' }, { periode: '10–14 Mar 2026', jenjang: 'SMP', akg: 87, cost: 14100, status: 'ok' }, { periode: '3–7 Mar 2026', jenjang: 'SMP', akg: 95, cost: 14500, status: 'ok' }, { periode: '24–28 Feb 2026', jenjang: 'SMP', akg: 82, cost: 13600, status: 'warn' }] },
+    sma: { avgAKG: 89, totalAnggaran: 'Rp 63,8jt', menuCount: 4, warnDays: 7, histori: [{ periode: '24–28 Mar 2026', jenjang: 'SMA', akg: 89, cost: 15800, status: 'ok' }, { periode: '17–21 Mar 2026', jenjang: 'SMA', akg: 85, cost: 15200, status: 'ok' }, { periode: '10–14 Mar 2026', jenjang: 'SMA', akg: 76, cost: 14800, status: 'warn' }, { periode: '3–7 Mar 2026', jenjang: 'SMA', akg: 91, cost: 15600, status: 'ok' }, { periode: '24–28 Feb 2026', jenjang: 'SMA', akg: 78, cost: 14900, status: 'warn' }] }
 };
 
 /* ═══════════════════════════════════════
@@ -121,6 +88,7 @@ function navigate(pageId, navEl) {
     document.getElementById('topbarTitle').innerHTML = topbarTitles[pageId] || pageId;
     if (pageId === 'dashboard') initDashboardCharts();
     if (pageId === 'laporan') { renderLapStats(); renderLapHistori(); initLaporanCharts(); }
+    syncBottomNav(pageId);
 }
 
 /* ═══════════════════════════════════════
@@ -138,8 +106,7 @@ function closeModal(id, e) { if (!e || e.target.classList.contains('modal-overla
 const now = new Date();
 const tsStr = 'Terakhir diperbarui: ' + now.toLocaleString('id-ID', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 ['ftDash', 'ftPeren', 'ftStok', 'ftLaporan', 'ftPengaturan', 'ftBantuan'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = tsStr;
+    const el = document.getElementById(id); if (el) el.textContent = tsStr;
 });
 
 /* ═══════════════════════════════════════
@@ -152,12 +119,8 @@ const fullDays = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
 function setJbDash(el, j) {
     el.parentElement.querySelectorAll('.jb').forEach(b => b.classList.remove('active'));
     el.classList.add('active');
-    activeJenjang = j;
-    activeDay = 0;
-    renderDashStats();
-    renderDayTabs();
-    renderDayMenu();
-    refreshBarChart();
+    activeJenjang = j; activeDay = 0;
+    renderDashStats(); renderDayTabs(); renderDayMenu(); refreshBarChart();
 }
 
 function renderDashStats() {
@@ -166,33 +129,16 @@ function renderDashStats() {
     document.getElementById('sidebarSekolah').textContent = d.sekolah;
     document.getElementById('topbarSekolah').textContent = d.sekolah;
     document.getElementById('dashStats').innerHTML = `
-        <div class="stat-card">
-            <div class="stat-top"><span class="stat-top-label">Total Siswa Dilayani</span><div class="stat-icon" style="background:var(--blue-dim)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4D9EFF" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div></div>
-            <div class="stat-val">${d.siswa}</div><div class="stat-sub up">▲ +5% vs bulan lalu</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-top"><span class="stat-top-label">Kepatuhan Gizi Rata-rata</span><div class="stat-icon" style="background:var(--green-dim)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00D68F" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div></div>
-            <div class="donut-row"><canvas id="donutChart" width="52" height="52"></canvas><div><div class="stat-val">${d.akgPct}%</div><div class="stat-sub up">Di atas target ${d.akgTarget}%</div></div></div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-top"><span class="stat-top-label">Status Anggaran / Siswa</span><div class="stat-icon" style="background:var(--amber-dim)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div></div>
-            <div class="stat-val" style="font-size:17px;margin-bottom:4px">Rp ${d.anggaran.toLocaleString('id')}</div>
-            <div style="margin-top:2px"><div class="prog-labels"><span>Aktual</span><span style="color:var(--text)">Rp ${d.anggaran.toLocaleString('id')} / Rp ${d.budgetMax.toLocaleString('id')}</span></div><div class="prog-track"><div class="prog-fill" style="width:${pct}%;background:var(--green)"></div></div></div>
-            <div class="stat-sub dim" style="margin-top:3px">${pct}% dari batas anggaran</div>
-        </div>
-        <div class="stat-card" style="border-color:rgba(245,166,35,.2)">
-            <div class="stat-top"><span class="stat-top-label" style="color:var(--amber)">⚠ Peringatan Stok Rendah</span></div>
-            <div class="stat-val" style="color:var(--amber)">${d.warnItems.length} item</div>
-            <div class="warn-pills">${d.warnItems.map(i => `<span class="warn-pill">${i}</span>`).join('')}</div>
-        </div>`;
-    // Re-init donut
+        <div class="stat-card"><div class="stat-top"><span class="stat-top-label">Total Siswa Dilayani</span><div class="stat-icon" style="background:var(--blue-dim)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4D9EFF" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div></div><div class="stat-val">${d.siswa}</div><div class="stat-sub up">▲ +5% vs bulan lalu</div></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-top-label">Kepatuhan Gizi Rata-rata</span><div class="stat-icon" style="background:var(--green-dim)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00D68F" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="donut-row"><canvas id="donutChart" width="52" height="52"></canvas><div><div class="stat-val">${d.akgPct}%</div><div class="stat-sub up">Di atas target ${d.akgTarget}%</div></div></div></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-top-label">Status Anggaran / Siswa</span><div class="stat-icon" style="background:var(--amber-dim)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div></div><div class="stat-val" style="font-size:17px;margin-bottom:4px">Rp ${d.anggaran.toLocaleString('id')}</div><div style="margin-top:2px"><div class="prog-labels"><span>Aktual</span><span style="color:var(--text)">Rp ${d.anggaran.toLocaleString('id')} / Rp ${d.budgetMax.toLocaleString('id')}</span></div><div class="prog-track"><div class="prog-fill" style="width:${pct}%;background:var(--green)"></div></div></div><div class="stat-sub dim" style="margin-top:3px">${pct}% dari batas anggaran</div></div>
+        <div class="stat-card" style="border-color:rgba(245,166,35,.2)"><div class="stat-top"><span class="stat-top-label" style="color:var(--amber)">⚠ Peringatan Stok Rendah</span></div><div class="stat-val" style="color:var(--amber)">${d.warnItems.length} item</div><div class="warn-pills">${d.warnItems.map(i => `<span class="warn-pill">${i}</span>`).join('')}</div></div>`;
     setTimeout(() => {
         const ctx = document.getElementById('donutChart');
         if (ctx && !charts.donut) {
             charts.donut = new Chart(ctx, { type: 'doughnut', data: { datasets: [{ data: [d.akgPct, 100 - d.akgPct], backgroundColor: ['#00D68F', 'rgba(255,255,255,0.05)'], borderWidth: 0 }] }, options: { cutout: '76%', plugins: { legend: { display: false }, tooltip: { enabled: false } }, responsive: false } });
         } else if (ctx && charts.donut) {
-            charts.donut.data.datasets[0].data = [d.akgPct, 100 - d.akgPct];
-            charts.donut.update();
+            charts.donut.data.datasets[0].data = [d.akgPct, 100 - d.akgPct]; charts.donut.update();
         }
     }, 50);
     document.getElementById('barChartTitle').textContent = `Kepatuhan Gizi Harian — Minggu Ini (${d.label})`;
@@ -231,40 +177,24 @@ function selectDay(i) { activeDay = i; renderDayTabs(); renderDayMenu(); }
 function refreshBarChart() {
     const d = JENJANG_DATA[activeJenjang];
     if (charts.bar) {
-        charts.bar.data.datasets[0].data = d.barData;
-        charts.bar.data.datasets[1].data = d.barDataPro;
-        charts.bar.data.datasets[2].data = d.barDataLem;
-        charts.bar.data.datasets[3].data = d.barDataKar;
+        charts.bar.data.datasets[0].data = d.barData; charts.bar.data.datasets[1].data = d.barDataPro;
+        charts.bar.data.datasets[2].data = d.barDataLem; charts.bar.data.datasets[3].data = d.barDataKar;
         charts.bar.update();
     }
 }
 
 function initDashboardCharts() {
+    renderDashStats();
     if (charts.bar) return;
     const d = JENJANG_DATA[activeJenjang];
-    renderDashStats();
     charts.bar = new Chart(document.getElementById('barChart'), {
         type: 'bar',
-        data: {
-            labels: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'],
-            datasets: [
-                { label: 'Kalori', data: d.barData, backgroundColor: 'rgba(0,214,143,0.55)', borderRadius: 3 },
-                { label: 'Protein', data: d.barDataPro, backgroundColor: 'rgba(77,158,255,0.55)', borderRadius: 3 },
-                { label: 'Lemak', data: d.barDataLem, backgroundColor: 'rgba(245,166,35,0.55)', borderRadius: 3 },
-                { label: 'Karbohidrat', data: d.barDataKar, backgroundColor: 'rgba(167,139,250,0.55)', borderRadius: 3 }
-            ]
-        },
+        data: { labels: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'], datasets: [{ label: 'Kalori', data: d.barData, backgroundColor: 'rgba(0,214,143,0.55)', borderRadius: 3 }, { label: 'Protein', data: d.barDataPro, backgroundColor: 'rgba(77,158,255,0.55)', borderRadius: 3 }, { label: 'Lemak', data: d.barDataLem, backgroundColor: 'rgba(245,166,35,0.55)', borderRadius: 3 }, { label: 'Karbohidrat', data: d.barDataKar, backgroundColor: 'rgba(167,139,250,0.55)', borderRadius: 3 }] },
         options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#6B6A75', font: { size: 10 }, boxWidth: 8, boxHeight: 8 } } }, scales: { x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#6B6A75', font: { size: 10 } } }, y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#6B6A75', font: { size: 10 }, callback: v => v + '%' }, min: 0, max: 120 } } }
     });
     charts.line = new Chart(document.getElementById('lineChart'), {
         type: 'line',
-        data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei'],
-            datasets: [
-                { label: 'Perencanaan', data: [8200, 8500, 8800, 9000, 9200], borderColor: '#00D68F', backgroundColor: 'rgba(0,214,143,0.08)', tension: .4, borderWidth: 1.5, pointRadius: 3, fill: true },
-                { label: 'Aktual', data: [7800, 8200, 8600, 8700, 9000], borderColor: '#F5A623', backgroundColor: 'transparent', tension: .4, borderWidth: 1.5, pointRadius: 3, borderDash: [4, 3] }
-            ]
-        },
+        data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei'], datasets: [{ label: 'Perencanaan', data: [8200, 8500, 8800, 9000, 9200], borderColor: '#00D68F', backgroundColor: 'rgba(0,214,143,0.08)', tension: .4, borderWidth: 1.5, pointRadius: 3, fill: true }, { label: 'Aktual', data: [7800, 8200, 8600, 8700, 9000], borderColor: '#F5A623', backgroundColor: 'transparent', tension: .4, borderWidth: 1.5, pointRadius: 3, borderDash: [4, 3] }] },
         options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#6B6A75', font: { size: 10 }, boxWidth: 8, boxHeight: 8 } } }, scales: { x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#6B6A75', font: { size: 10 } } }, y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#6B6A75', font: { size: 10 }, callback: v => 'Rp ' + (v / 1000).toFixed(0) + 'rb' } } } }
     });
 }
@@ -278,9 +208,7 @@ function setJbLap(el, j) {
     el.parentElement.querySelectorAll('.jb').forEach(b => b.classList.remove('active'));
     el.classList.add('active');
     lapJenjang = j;
-    renderLapStats();
-    renderLapHistori();
-    refreshLapCharts();
+    renderLapStats(); renderLapHistori(); refreshLapCharts();
     document.getElementById('akgChartTitle').textContent = `Tren Pemenuhan AKG — Maret 2026 (${JENJANG_DATA[j].label})`;
 }
 
@@ -296,63 +224,34 @@ function renderLapStats() {
 function renderLapHistori() {
     const d = LAPORAN_DATA[lapJenjang];
     document.getElementById('lapHistoriBody').innerHTML = d.histori.map(h => `
-        <tr>
-            <td>${h.periode}</td>
-            <td><span class="badge ${h.jenjang === 'SD' ? 'blue' : h.jenjang === 'SMP' ? 'purple' : 'amber'}">${h.jenjang}</span></td>
-            <td style="color:${h.akg >= 85 ? 'var(--green)' : 'var(--amber)'};font-family:var(--mono)">${h.akg}%</td>
-            <td style="font-family:var(--mono)">Rp ${h.cost.toLocaleString('id')}</td>
-            <td><span class="badge ${h.status === 'ok' ? 'ok' : 'warn'}">${h.status === 'ok' ? 'Diterapkan' : 'Di bawah target'}</span></td>
-            <td><button class="btn btn-ghost btn-sm" style="font-size:10px">Lihat</button></td>
-        </tr>`).join('');
+        <tr><td>${h.periode}</td><td><span class="badge ${h.jenjang === 'SD' ? 'blue' : h.jenjang === 'SMP' ? 'purple' : 'amber'}">${h.jenjang}</span></td><td style="color:${h.akg >= 85 ? 'var(--green)' : 'var(--amber)'};font-family:var(--mono)">${h.akg}%</td><td style="font-family:var(--mono)">Rp ${h.cost.toLocaleString('id')}</td><td><span class="badge ${h.status === 'ok' ? 'ok' : 'warn'}">${h.status === 'ok' ? 'Diterapkan' : 'Di bawah target'}</span></td><td><button class="btn btn-ghost btn-sm" style="font-size:10px">Lihat</button></td></tr>`).join('');
 }
 
 function initLaporanCharts() {
     if (charts.akg) return;
     charts.akg = new Chart(document.getElementById('akgChart'), {
         type: 'line',
-        data: {
-            labels: ['3 Mar', '6', '9', '12', '15', '18', '21', '24', '27'],
-            datasets: [
-                { label: 'Kalori %', data: [85, 88, 76, 80, 92, 90, 88, 95, 89], borderColor: '#00D68F', backgroundColor: 'rgba(0,214,143,0.06)', tension: .4, borderWidth: 1.5, pointRadius: 3, fill: true },
-                { label: 'Protein %', data: [78, 82, 70, 75, 88, 85, 82, 90, 84], borderColor: '#4D9EFF', backgroundColor: 'transparent', tension: .4, borderWidth: 1.5, pointRadius: 2 },
-                { label: 'Target 85%', data: [85, 85, 85, 85, 85, 85, 85, 85, 85], borderColor: 'rgba(255,255,255,.15)', borderDash: [6, 4], borderWidth: 1, pointRadius: 0 }
-            ]
-        },
+        data: { labels: ['3 Mar', '6', '9', '12', '15', '18', '21', '24', '27'], datasets: [{ label: 'Kalori %', data: [85, 88, 76, 80, 92, 90, 88, 95, 89], borderColor: '#00D68F', backgroundColor: 'rgba(0,214,143,0.06)', tension: .4, borderWidth: 1.5, pointRadius: 3, fill: true }, { label: 'Protein %', data: [78, 82, 70, 75, 88, 85, 82, 90, 84], borderColor: '#4D9EFF', backgroundColor: 'transparent', tension: .4, borderWidth: 1.5, pointRadius: 2 }, { label: 'Target 85%', data: [85, 85, 85, 85, 85, 85, 85, 85, 85], borderColor: 'rgba(255,255,255,.15)', borderDash: [6, 4], borderWidth: 1, pointRadius: 0 }] },
         options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#6B6A75', font: { size: 10 }, boxWidth: 8, boxHeight: 8 } } }, scales: { x: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#6B6A75', font: { size: 10 } } }, y: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#6B6A75', font: { size: 10 }, callback: v => v + '%' }, min: 60, max: 110 } } }
     });
     charts.budget = new Chart(document.getElementById('budgetChart'), {
         type: 'bar',
-        data: {
-            labels: ['M1', 'M2', 'M3', 'M4'],
-            datasets: [
-                { label: 'Perencanaan', data: [14400000, 14400000, 14400000, 14400000], backgroundColor: 'rgba(0,214,143,.2)', borderColor: '#00D68F', borderWidth: 1, borderRadius: 4 },
-                { label: 'Aktual', data: [12950000, 13700000, 13200000, 14350000], backgroundColor: 'rgba(245,166,35,.4)', borderColor: '#F5A623', borderWidth: 1, borderRadius: 4 }
-            ]
-        },
+        data: { labels: ['M1', 'M2', 'M3', 'M4'], datasets: [{ label: 'Perencanaan', data: [14400000, 14400000, 14400000, 14400000], backgroundColor: 'rgba(0,214,143,.2)', borderColor: '#00D68F', borderWidth: 1, borderRadius: 4 }, { label: 'Aktual', data: [12950000, 13700000, 13200000, 14350000], backgroundColor: 'rgba(245,166,35,.4)', borderColor: '#F5A623', borderWidth: 1, borderRadius: 4 }] },
         options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#6B6A75', font: { size: 10 }, boxWidth: 8, boxHeight: 8 } } }, scales: { x: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#6B6A75', font: { size: 10 } } }, y: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#6B6A75', font: { size: 10 }, callback: v => 'Rp ' + (v / 1000000).toFixed(0) + 'jt' } } } }
     });
 }
 
 function refreshLapCharts() {
-    const akgDataMap = {
-        sd: { kal: [85, 88, 76, 80, 92, 90, 88, 95, 89], pro: [78, 82, 70, 75, 88, 85, 82, 90, 84] },
-        smp: { kal: [88, 91, 85, 90, 95, 93, 90, 96, 92], pro: [82, 86, 80, 85, 90, 88, 85, 92, 88] },
-        sma: { kal: [83, 87, 79, 84, 90, 88, 85, 91, 87], pro: [78, 82, 75, 80, 85, 83, 80, 87, 83] }
-    };
-    const budgetMap = {
-        sd: { plan: [14400000, 14400000, 14400000, 14400000], actual: [12950000, 13700000, 13200000, 14350000] },
-        smp: { plan: [18720000, 18720000, 18720000, 18720000], actual: [16800000, 17400000, 17100000, 18200000] },
-        sma: { plan: [15200000, 15200000, 15200000, 15200000], actual: [13900000, 14500000, 14100000, 15100000] }
-    };
-    if (charts.akg) { charts.akg.data.datasets[0].data = akgDataMap[lapJenjang].kal; charts.akg.data.datasets[1].data = akgDataMap[lapJenjang].pro; charts.akg.update(); }
-    if (charts.budget) { charts.budget.data.datasets[0].data = budgetMap[lapJenjang].plan; charts.budget.data.datasets[1].data = budgetMap[lapJenjang].actual; charts.budget.update(); }
+    const m = { sd: { kal: [85, 88, 76, 80, 92, 90, 88, 95, 89], pro: [78, 82, 70, 75, 88, 85, 82, 90, 84] }, smp: { kal: [88, 91, 85, 90, 95, 93, 90, 96, 92], pro: [82, 86, 80, 85, 90, 88, 85, 92, 88] }, sma: { kal: [83, 87, 79, 84, 90, 88, 85, 91, 87], pro: [78, 82, 75, 80, 85, 83, 80, 87, 83] } };
+    const b = { sd: { plan: [14400000, 14400000, 14400000, 14400000], actual: [12950000, 13700000, 13200000, 14350000] }, smp: { plan: [18720000, 18720000, 18720000, 18720000], actual: [16800000, 17400000, 17100000, 18200000] }, sma: { plan: [15200000, 15200000, 15200000, 15200000], actual: [13900000, 14500000, 14100000, 15100000] } };
+    if (charts.akg) { charts.akg.data.datasets[0].data = m[lapJenjang].kal; charts.akg.data.datasets[1].data = m[lapJenjang].pro; charts.akg.update(); }
+    if (charts.budget) { charts.budget.data.datasets[0].data = b[lapJenjang].plan; charts.budget.data.datasets[1].data = b[lapJenjang].actual; charts.budget.update(); }
 }
 
 /* ═══════════════════════════════════════
    PERENCANAAN MENU
 ═══════════════════════════════════════ */
-let currentStep = 0;
-let procStep = 0;
+let currentStep = 0, procStep = 0;
 const stepsDef = [
     { num: '01', label: 'Parameter Dasar', sub: 'Anggaran & jenjang' },
     { num: '02', label: 'Bahan Makanan', sub: 'Daftar & stok' },
@@ -418,7 +317,7 @@ function renderStep2() {
     return `<div class="form-card"><div class="form-card-title">Daftar Bahan Makanan</div><div class="form-card-sub">Tambahkan bahan yang tersedia di dapur.</div>
     <div class="bahan-header"><span style="font-size:11px;color:var(--text-dim)">${bahanList.length} bahan</span><button class="btn btn-primary btn-sm" onclick="showToast('Tambah bahan: form siap')">+ Tambah Bahan</button></div>
     <div class="bahan-table-wrap"><table class="bt"><thead><tr><th>Nama Bahan</th><th>Porsi</th><th>Harga</th><th>Stok</th><th>Kalori est.</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>
-    <div style="display:flex;justify-content:space-between;margin-top:14px"><button class="btn btn-ghost" onclick="goStep(0)">← Kembali</button><button class="btn btn-primary" onclick="goStep(2)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Proses Otomatis</button></div></div>`;
+    <div style="display:flex;justify-content:space-between;margin-top:14px"><button class="btn btn-ghost" onclick="goStep(0)">← Kembali</button><button class="btn btn-primary" onclick="goStep(2)">⚡ Proses Otomatis</button></div></div>`;
 }
 
 function renderStep3() {
@@ -443,7 +342,7 @@ function renderStep4() {
     const avgAKG = Math.round(resultMenus.reduce((a, b) => a + (b.kal / AKG.kal + b.pro / AKG.pro + b.kar / AKG.kar + b.lem / AKG.lem) / 4, 0) / 5 * 100);
     const avgCost = Math.round(resultMenus.reduce((a, b) => a + b.cost, 0) / 5);
     const rows = m.items.map(it => `<tr><td>${it.nama}</td><td>${it.kal}</td><td>${it.pro}</td><td>${it.kar}</td><td>${it.lem}</td></tr>`).join('');
-    const warnBox = isWarn ? `<div class="warning-box"><div class="warning-box-title"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>AKG belum optimal (${pct}%)</div><ul style="padding-left:16px"><li style="font-size:11px;color:var(--amber)">Protein kurang ±12g — tambah telur/tempe</li><li style="font-size:11px;color:var(--amber)">Karbohidrat kurang ±45g — tambah buah/nasi</li></ul></div>` : '';
+    const warnBox = isWarn ? `<div class="warning-box"><div class="warning-box-title">⚠ AKG belum optimal (${pct}%)</div><ul style="padding-left:16px"><li style="font-size:11px;color:var(--amber)">Protein kurang ±12g — tambah telur/tempe</li><li style="font-size:11px;color:var(--amber)">Karbohidrat kurang ±45g — tambah buah/nasi</li></ul></div>` : '';
     return `<div class="form-card"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div><div class="form-card-title">Hasil Menu Mingguan</div><div class="form-card-sub">${JENJANG_DATA[activeJenjang].sekolah} · 31 Mar–4 Apr · ${JENJANG_DATA[activeJenjang].label}</div></div><button class="btn btn-ghost btn-sm">Ekspor PDF</button></div>
     <div class="result-stats"><div class="rstat"><div class="rstat-label">Rata-rata AKG</div><div class="rstat-val" style="color:var(--green)">${avgAKG}%</div><div style="font-size:10px;color:var(--green)">Di atas 85%</div></div><div class="rstat"><div class="rstat-label">Biaya/siswa/hari</div><div class="rstat-val">Rp ${(avgCost / 1000).toFixed(1)}rb</div></div><div class="rstat"><div class="rstat-label">Total/minggu</div><div class="rstat-val">Rp ${Math.round(avgCost * 5 * JENJANG_DATA[activeJenjang].siswa / 1000000).toFixed(1)}jt</div></div><div class="rstat" style="${warnResultDays.length ? 'border:1px solid rgba(245,166,35,.3)' : ''}"><div class="rstat-label">Hari warning AKG</div><div class="rstat-val" style="color:${warnResultDays.length ? 'var(--amber)' : 'var(--green)'}">${warnResultDays.length} hari</div></div></div>
     <div class="menu-day-tabs">${tabs}</div>
@@ -461,7 +360,7 @@ function startProc() {
     const steps = ['ps0', 'ps1', 'ps2', 'ps3', 'ps4'];
     const dots = ['pd0', 'pd1', 'pd2', 'pd3', 'pd4'];
     const dur = [600, 900, 1200, 700, 800];
-    let el = 0;
+    let elapsed = 0;
     const tot = dur.reduce((a, b) => a + b, 0);
     procStep = 0;
     function tick() {
@@ -473,18 +372,13 @@ function startProc() {
         setTimeout(() => {
             if (s) { s.classList.remove('active-s'); s.classList.add('done'); }
             if (d) { d.classList.remove('active-s'); d.classList.add('done'); }
-            if (procStep + 1 < steps.length) {
-                const nd = document.getElementById(dots[procStep + 1]);
-                if (nd) nd.classList.add('active-s');
-            }
-            el += dur[procStep];
-            const pct = Math.round(el / tot * 100);
-            const bar = document.getElementById('procBar');
-            const pctEl = document.getElementById('procPct');
+            if (procStep + 1 < steps.length) { const nd = document.getElementById(dots[procStep + 1]); if (nd) nd.classList.add('active-s'); }
+            elapsed += dur[procStep];
+            const pct = Math.round(elapsed / tot * 100);
+            const bar = document.getElementById('procBar'); const pctEl = document.getElementById('procPct');
             if (bar) bar.style.width = pct + '%';
             if (pctEl) pctEl.textContent = pct + '%';
-            procStep++;
-            tick();
+            procStep++; tick();
         }, dur[procStep]);
     }
     tick();
@@ -541,16 +435,7 @@ function renderStokTable() {
         const col = x.status === 'danger' ? 'var(--red)' : x.status === 'warn' ? 'var(--amber)' : 'var(--green)';
         const badge = x.status === 'danger' ? '<span class="badge danger">Kritis</span>' : x.status === 'warn' ? '<span class="badge warn">Rendah</span>' : '<span class="badge ok">Aman</span>';
         const katBadge = x.kat === 'Protein' ? 'blue' : x.kat === 'Sayuran' ? 'ok' : x.kat === 'Karbohidrat' ? 'amber' : x.kat === 'Buah' ? 'purple' : 'info';
-        return `<tr>
-            <td>${x.nama}</td>
-            <td><span class="badge ${katBadge}">${x.kat}</span></td>
-            <td><div class="stok-bar-wrap"><div class="stok-bar-bg"><div class="stok-bar-fill" style="width:${Math.min(pct, 100)}%;background:${col}"></div></div><span style="font-family:var(--mono);font-size:10px;min-width:40px;text-align:right">${x.stok} ${x.satuan}</span></div></td>
-            <td style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">${x.min} ${x.satuan}</td>
-            <td style="font-family:var(--mono);font-size:10px">Rp ${x.harga.toLocaleString('id')}</td>
-            <td>${formatExp(x.exp)}</td>
-            <td>${badge}</td>
-            <td><div class="act-btns"><button class="btn btn-ghost btn-sm" style="padding:3px 7px;font-size:10px" onclick="editStok(${x.id})">Edit</button><button class="btn btn-warning btn-sm" style="padding:3px 7px;font-size:10px" onclick="restockItem(${x.id})">+Stok</button></div></td>
-        </tr>`;
+        return `<tr><td>${x.nama}</td><td><span class="badge ${katBadge}">${x.kat}</span></td><td><div class="stok-bar-wrap"><div class="stok-bar-bg"><div class="stok-bar-fill" style="width:${Math.min(pct, 100)}%;background:${col}"></div></div><span style="font-family:var(--mono);font-size:10px;min-width:40px;text-align:right">${x.stok} ${x.satuan}</span></div></td><td style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">${x.min} ${x.satuan}</td><td style="font-family:var(--mono);font-size:10px">Rp ${x.harga.toLocaleString('id')}</td><td>${formatExp(x.exp)}</td><td>${badge}</td><td><div class="act-btns"><button class="btn btn-ghost btn-sm" style="padding:3px 7px;font-size:10px" onclick="editStok(${x.id})">Edit</button><button class="btn btn-warning btn-sm" style="padding:3px 7px;font-size:10px" onclick="restockItem(${x.id})">+Stok</button></div></td></tr>`;
     }).join('');
 }
 
@@ -565,8 +450,7 @@ function filterStokStatus(s) { stokStat = s; renderStokTable(); }
 function filterStokKat(k) { stokKat = k; renderStokTable(); }
 
 function editStok(id) {
-    const x = stokData.find(d => d.id === id);
-    if (!x) return;
+    const x = stokData.find(d => d.id === id); if (!x) return;
     document.getElementById('stokFormTitle').textContent = 'Edit — ' + x.nama;
     document.getElementById('sf_nama').value = x.nama;
     document.getElementById('sf_stok').value = x.stok;
@@ -577,40 +461,29 @@ function editStok(id) {
 }
 
 function restockItem(id) {
-    const x = stokData.find(d => d.id === id);
-    if (!x) return;
+    const x = stokData.find(d => d.id === id); if (!x) return;
     const j = prompt(`Tambah stok ${x.nama} (${x.satuan}):`);
     if (j && !isNaN(j)) {
-        const old = x.stok;
-        x.stok += parseInt(j);
+        const old = x.stok; x.stok += parseInt(j);
         if (x.stok >= x.min) x.status = 'ok';
         auditData.unshift({ aksi: 'Tambah Stok', bahan: x.nama, detail: `+ ${j} ${x.satuan} (${old}→${x.stok})`, time: 'Baru saja', type: 'ok' });
-        renderStokTable();
-        renderAudit();
+        renderStokTable(); renderAudit();
         showToast(`Stok ${x.nama} berhasil ditambah!`);
     }
 }
 
 function saveStokItem() {
-    const n = document.getElementById('sf_nama').value.trim();
-    if (!n) return;
-    showToast(`Bahan "${n}" berhasil disimpan.`);
-    resetStokForm();
+    const n = document.getElementById('sf_nama').value.trim(); if (!n) return;
+    showToast(`Bahan "${n}" berhasil disimpan.`); resetStokForm();
 }
 
 function resetStokForm() {
-    ['sf_nama', 'sf_stok', 'sf_min', 'sf_harga', 'sf_exp'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.value = '';
-    });
+    ['sf_nama', 'sf_stok', 'sf_min', 'sf_harga', 'sf_exp'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
     document.getElementById('sf_satuan').value = 'kg';
     document.getElementById('stokFormTitle').textContent = 'Form Tambah Bahan';
 }
 
-function showStokForm() {
-    resetStokForm();
-    document.getElementById('stokFormCard').scrollIntoView({ behavior: 'smooth' });
-}
+function showStokForm() { resetStokForm(); document.getElementById('stokFormCard').scrollIntoView({ behavior: 'smooth' }); }
 
 /* ═══════════════════════════════════════
    SETTINGS & HELP
@@ -643,8 +516,49 @@ function toggleGuide(card) {
 }
 
 /* ═══════════════════════════════════════
+   MOBILE / BOTTOM NAV
+═══════════════════════════════════════ */
+function syncBottomNav(pageId) {
+    const bnMap = { dashboard: 'bn-dashboard', perencanaan: 'bn-perencanaan', stok: 'bn-stok', laporan: 'bn-laporan', pengaturan: 'bn-more', bantuan: 'bn-more' };
+    document.querySelectorAll('.bn-item, .bn-center').forEach(el => el.classList.remove('active'));
+    const bnEl = document.getElementById(bnMap[pageId]);
+    if (bnEl) bnEl.classList.add('active');
+    document.querySelectorAll('.drawer-item[id]').forEach(el => el.classList.remove('active'));
+    const diEl = document.getElementById('di-' + pageId);
+    if (diEl) diEl.classList.add('active');
+}
+
+function mobileNavigate(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const pageEl = document.getElementById('page-' + pageId);
+    if (pageEl) pageEl.classList.add('active');
+    document.getElementById('topbarTitle').innerHTML = topbarTitles[pageId] || pageId;
+    if (pageId === 'dashboard') initDashboardCharts();
+    if (pageId === 'laporan') { renderLapStats(); renderLapHistori(); initLaporanCharts(); }
+    if (pageId === 'perencanaan') renderStep();
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    const sidebarEl = document.querySelector(`.nav-item[onclick*="'${pageId}'"]`);
+    if (sidebarEl) sidebarEl.classList.add('active');
+    syncBottomNav(pageId);
+}
+
+function openDrawer() {
+    document.getElementById('drawerOverlay').classList.add('open');
+}
+
+function closeDrawer() {
+    document.getElementById('drawerOverlay').classList.remove('open');
+}
+
+/* ═══════════════════════════════════════
    INIT
 ═══════════════════════════════════════ */
+// Add data-tooltip attributes to sidebar nav items for tablet tooltip
+document.querySelectorAll('.nav-item').forEach(item => {
+    const span = item.querySelector('span:not(.nav-badge)');
+    if (span) item.setAttribute('data-tooltip', span.textContent.trim());
+});
+
 renderDayTabs();
 renderDayMenu();
 initDashboardCharts();
@@ -653,77 +567,4 @@ renderStokTable();
 renderAudit();
 renderLapStats();
 renderLapHistori();
-
-/* ═══════════════════════════════════════
-   RESPONSIVE / MOBILE NAV
-═══════════════════════════════════════ */
-
-/* ═══════════════════════════════════════
-   RESPONSIVE / MOBILE NAV
-═══════════════════════════════════════ */
-
-function syncBottomNav(pageId) {
-    const bnMap = {
-        dashboard: 'bn-dashboard',
-        perencanaan: 'bn-perencanaan',
-        stok: 'bn-stok',
-        laporan: 'bn-laporan',
-        pengaturan: 'bn-more',
-        bantuan: 'bn-more'
-    };
-    document.querySelectorAll('.bn-item').forEach(el => el.classList.remove('active'));
-    const bnEl = document.getElementById(bnMap[pageId]);
-    if (bnEl) bnEl.classList.add('active');
-
-    document.querySelectorAll('.drawer-item[id]').forEach(el => el.classList.remove('active'));
-    const diEl = document.getElementById('di-' + pageId);
-    if (diEl) diEl.classList.add('active');
-}
-
-function mobileNavigate(pageId) {
-    // Show the right page
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    const pageEl = document.getElementById('page-' + pageId);
-    if (pageEl) pageEl.classList.add('active');
-
-    // Update topbar title
-    document.getElementById('topbarTitle').innerHTML = topbarTitles[pageId] || pageId;
-
-    // Trigger data init if needed
-    if (pageId === 'dashboard') initDashboardCharts();
-    if (pageId === 'laporan') { renderLapStats(); renderLapHistori(); initLaporanCharts(); }
-    if (pageId === 'perencanaan') renderStep();
-
-    // Sync sidebar nav (desktop) & bottom nav (mobile)
-    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    const sidebarEl = document.querySelector(`.nav-item[onclick*="'${pageId}'"]`);
-    if (sidebarEl) sidebarEl.classList.add('active');
-
-    syncBottomNav(pageId);
-}
-
-function openDrawer() {
-    const overlay = document.getElementById('drawerOverlay');
-    if (!overlay) return;
-    overlay.style.display = 'flex';
-    requestAnimationFrame(() => overlay.classList.add('open'));
-}
-
-function closeDrawer() {
-    const overlay = document.getElementById('drawerOverlay');
-    if (!overlay) return;
-    overlay.classList.remove('open');
-    setTimeout(() => {
-        if (!overlay.classList.contains('open')) overlay.style.display = 'none';
-    }, 250);
-}
-
-// Also sync bottom nav when desktop sidebar nav is clicked
-const _nav = navigate;
-navigate = function (pageId, navEl) {
-    _nav(pageId, navEl);
-    syncBottomNav(pageId);
-};
-
-// Init
 syncBottomNav('dashboard');

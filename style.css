@@ -2280,22 +2280,28 @@ table.ut tbody tr:hover td {
     color: var(--amber)
 }
 
+
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE SYSTEM
    Breakpoints:
      Mobile  : < 768px
-     Tablet  : 768px – 1024px
-     Desktop : > 1024px  (base styles above)
+     Tablet  : 768px – 1024px  ← iPad, iPad Mini, iPad Pro 11"
+     Desktop : > 1024px
 ═══════════════════════════════════════════════════════════ */
 
-/* ─── TABLET: sidebar collapses to icon-only rail ─── */
-@media (max-width: 1024px) {
+/* ───────────────────────────────────────
+   TABLET: icon-only sidebar + tooltip
+─────────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1024px) {
     .app {
-        grid-template-columns: 64px 1fr
+        grid-template-columns: 58px 1fr
     }
 
+    /* Logo: icon only */
     .logo-area {
-        padding: 14px 10px
+        padding: 14px 0;
+        display: flex;
+        justify-content: center
     }
 
     .logo-name {
@@ -2306,9 +2312,11 @@ table.ut tbody tr:hover td {
         justify-content: center
     }
 
+    /* Nav: icon-only with tooltip */
     .nav {
         padding: 8px 6px;
-        gap: 4px
+        gap: 4px;
+        align-items: center
     }
 
     .nav-lbl {
@@ -2318,10 +2326,15 @@ table.ut tbody tr:hover td {
     .nav-item {
         justify-content: center;
         padding: 10px 0;
-        border-radius: 10px
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        position: relative;
+        /* tooltip trigger */
     }
 
-    .nav-item span:not(.nav-badge) {
+    /* Hide text labels in nav */
+    .nav-item>span:not(.nav-badge) {
         display: none
     }
 
@@ -2330,21 +2343,99 @@ table.ut tbody tr:hover td {
         height: 18px
     }
 
+    /* Active indicator: dot instead of left bar */
     .nav-item.active::before {
         display: none
     }
 
+    .nav-item.active::after {
+        content: '';
+        position: absolute;
+        right: -4px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 20px;
+        background: var(--green);
+        border-radius: 2px 0 0 2px
+    }
+
+    /* Badge repositioned */
     .nav-badge {
         position: absolute;
-        top: 4px;
-        right: 4px;
+        top: 3px;
+        right: 3px;
         width: 14px;
         height: 14px;
         font-size: 8px
     }
 
+    /* TOOLTIP */
+    .nav-item::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        left: calc(100% + 12px);
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--surface3);
+        border: 1px solid var(--border);
+        color: var(--text);
+        font-size: 11px;
+        font-weight: 500;
+        padding: 5px 10px;
+        border-radius: 7px;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .15s, transform .15s;
+        transform: translateY(-50%) translateX(-4px);
+        z-index: 100;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .4)
+    }
+
+    /* Tooltip arrow */
+    .nav-item::after {
+        content: '';
+        position: absolute;
+        left: calc(100% + 6px);
+        top: 50%;
+        transform: translateY(-50%);
+        border: 5px solid transparent;
+        border-right-color: var(--border);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .15s;
+        z-index: 101
+    }
+
+    /* Override active::after with tooltip arrow logic */
+    .nav-item.active::after {
+        border: none;
+        right: auto;
+        left: calc(100% + 6px);
+        top: 50%;
+        transform: translateY(-50%);
+        border: 5px solid transparent;
+        border-right-color: var(--border);
+        pointer-events: none;
+        width: auto;
+        height: auto;
+        background: none;
+        border-radius: 0
+    }
+
+    .nav-item:hover::before {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0)
+    }
+
+    .nav-item:hover::after {
+        opacity: 1
+    }
+
+    /* User area */
     .sidebar-user {
-        padding: 10px 6px;
+        padding: 10px 0;
         justify-content: center
     }
 
@@ -2352,14 +2443,17 @@ table.ut tbody tr:hover td {
         display: none
     }
 
-    /* topbar: hide secondary elements */
-    .topbar-user p,
-    .topbar-user span,
+    /* Topbar */
     .search-wrap {
         display: none
     }
 
-    /* grids tighten up */
+    .topbar-user p,
+    .topbar-user span {
+        display: none
+    }
+
+    /* Grid adjustments */
     .stats-row {
         grid-template-columns: repeat(2, 1fr)
     }
@@ -2397,7 +2491,7 @@ table.ut tbody tr:hover td {
         grid-template-columns: 1fr 1fr
     }
 
-    /* settings & help: collapse side nav */
+    /* Settings & help: collapse side nav */
     .settings-body {
         grid-template-columns: 1fr
     }
@@ -2464,21 +2558,22 @@ table.ut tbody tr:hover td {
         height: 16px
     }
 
-    /* result stats on perencanaan */
     .result-stats {
         grid-template-columns: repeat(2, 1fr)
     }
 }
 
-/* ─── MOBILE: bottom nav replaces sidebar ─── */
+
+/* ───────────────────────────────────────
+   MOBILE: bottom nav (app-style)
+─────────────────────────────────────── */
 @media (max-width: 767px) {
 
-    /* hide sidebar entirely */
+    /* Hide sidebar */
     .sidebar {
         display: none
     }
 
-    /* full-width main, leave room for bottom nav */
     .app {
         grid-template-columns: 1fr
     }
@@ -2492,7 +2587,7 @@ table.ut tbody tr:hover td {
         height: 100vh
     }
 
-    /* topbar: compact */
+    /* Topbar compact */
     .topbar {
         height: 52px;
         min-height: 52px;
@@ -2503,48 +2598,46 @@ table.ut tbody tr:hover td {
         font-size: 13px
     }
 
-    .topbar-title b {
-        font-size: 13px
-    }
-
     .topbar-user,
     .search-wrap {
         display: none
     }
 
-    /* hamburger btn visible on mobile */
     .mobile-menu-btn {
         display: flex
     }
 
-    /* page content: pad bottom for bottom nav */
+    /* Content: pad bottom for nav */
     .content {
         padding: 12px 14px 80px;
         gap: 10px
     }
 
-    /* footer hidden on mobile (bottom nav replaces it) */
+    /* Footer hidden */
     .footer {
         display: none
     }
 
-    /* ── BOTTOM NAV ── */
+    /* ════════════════════════════════
+       BOTTOM NAV — App style
+    ════════════════════════════════ */
     .bottom-nav {
         display: flex;
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
-        height: 64px;
+        height: 72px;
         background: var(--surface);
         border-top: 1px solid var(--border);
         z-index: 100;
-        padding: 0 4px;
+        padding: 0 8px;
         padding-bottom: env(safe-area-inset-bottom);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px)
+        align-items: center;
+        gap: 0
     }
 
+    /* Regular nav items */
     .bn-item {
         flex: 1;
         display: flex;
@@ -2554,17 +2647,17 @@ table.ut tbody tr:hover td {
         gap: 4px;
         cursor: pointer;
         color: var(--text-dim);
-        transition: color .15s;
+        transition: color .2s;
         border-radius: 12px;
-        margin: 6px 2px;
+        height: 56px;
         position: relative;
         -webkit-tap-highlight-color: transparent;
         user-select: none
     }
 
     .bn-item svg {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
         flex-shrink: 0;
         transition: transform .2s
     }
@@ -2576,14 +2669,105 @@ table.ut tbody tr:hover td {
     }
 
     .bn-item.active {
-        color: var(--green);
-        background: var(--green-dim)
+        color: var(--green)
     }
 
     .bn-item.active svg {
         transform: translateY(-1px)
     }
 
+    /* Active pill indicator */
+    .bn-item.active .bn-active-dot {
+        display: block
+    }
+
+    .bn-active-dot {
+        display: none;
+        position: absolute;
+        bottom: 4px;
+        width: 4px;
+        height: 4px;
+        background: var(--green);
+        border-radius: 50%
+    }
+
+    /* ── CENTER FLOATING BUTTON ── */
+    .bn-center {
+        flex: 0 0 72px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+        position: relative;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        /* push it up */
+        margin-top: -28px
+    }
+
+    .bn-center-bubble {
+        width: 58px;
+        height: 58px;
+        border-radius: 20px;
+        background: linear-gradient(145deg, #00E89A, #00B876);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+            0 8px 24px rgba(0, 214, 143, 0.45),
+            0 2px 8px rgba(0, 0, 0, .3),
+            inset 0 1px 0 rgba(255, 255, 255, .2);
+        transition: transform .2s, box-shadow .2s;
+        position: relative;
+        overflow: hidden
+    }
+
+    /* shine effect */
+    .bn-center-bubble::before {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 8px;
+        width: 36px;
+        height: 16px;
+        background: rgba(255, 255, 255, .25);
+        border-radius: 50%;
+        filter: blur(4px)
+    }
+
+    .bn-center-bubble svg {
+        color: #000;
+        position: relative;
+        z-index: 1
+    }
+
+    .bn-center:active .bn-center-bubble {
+        transform: scale(0.93);
+        box-shadow: 0 4px 12px rgba(0, 214, 143, .35), 0 1px 4px rgba(0, 0, 0, .3)
+    }
+
+    .bn-center.active .bn-center-bubble {
+        background: linear-gradient(145deg, #00E89A, #009A63);
+        box-shadow:
+            0 6px 20px rgba(0, 214, 143, .5),
+            0 2px 8px rgba(0, 0, 0, .3),
+            inset 0 1px 0 rgba(255, 255, 255, .2)
+    }
+
+    .bn-center span {
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--green);
+        font-family: var(--sans)
+    }
+
+    .bn-center.active span {
+        color: var(--green)
+    }
+
+    /* Badge on stok item */
     .bn-item .bn-badge {
         position: absolute;
         top: 5px;
@@ -2602,25 +2786,24 @@ table.ut tbody tr:hover td {
         font-weight: 600
     }
 
-    /* ── DRAWER OVERLAY (more menu / settings) ── */
+    /* ── DRAWER ── */
     .drawer-overlay {
-        display: none;
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, .6);
         z-index: 150;
-        backdrop-filter: blur(2px)
+        backdrop-filter: blur(2px);
+        align-items: flex-end
     }
 
     .drawer-overlay.open {
-        display: flex;
-        align-items: flex-end
+        display: flex !important
     }
 
     .drawer {
         width: 100%;
         background: var(--surface);
-        border-radius: 18px 18px 0 0;
+        border-radius: 20px 20px 0 0;
         padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
         border-top: 1px solid var(--border);
         animation: slideUp .25s ease
@@ -2685,7 +2868,7 @@ table.ut tbody tr:hover td {
         stroke: var(--green)
     }
 
-    /* ── GRID OVERRIDES ── */
+    /* Grid overrides */
     .stats-row {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px
@@ -2735,7 +2918,7 @@ table.ut tbody tr:hover td {
         grid-template-columns: repeat(2, 1fr)
     }
 
-    /* settings & help: horizontal scroll tabs */
+    /* Settings & help tabs */
     .settings-body {
         grid-template-columns: 1fr
     }
@@ -2812,7 +2995,7 @@ table.ut tbody tr:hover td {
         display: none
     }
 
-    /* filter bar: scrollable */
+    /* Scrollable filter bar */
     .filter-bar {
         overflow-x: auto;
         flex-wrap: nowrap;
@@ -2824,7 +3007,6 @@ table.ut tbody tr:hover td {
         display: none
     }
 
-    /* table: scrollable horizontally */
     .table-wrap {
         overflow-x: auto
     }
@@ -2838,7 +3020,7 @@ table.ut tbody tr:hover td {
         min-width: 560px
     }
 
-    /* stepper: compress */
+    /* Stepper */
     .stepper-wrap {
         padding: 10px 12px;
         overflow-x: auto
@@ -2856,7 +3038,7 @@ table.ut tbody tr:hover td {
         font-size: 10px
     }
 
-    /* misc */
+    /* Misc */
     .stat-val {
         font-size: 18px
     }
@@ -2873,7 +3055,6 @@ table.ut tbody tr:hover td {
         max-height: 180px
     }
 
-    /* day tabs: scrollable */
     .day-tabs {
         overflow-x: auto;
         flex-wrap: nowrap;
@@ -2886,7 +3067,6 @@ table.ut tbody tr:hover td {
         display: none
     }
 
-    /* menu day tabs */
     .menu-day-tabs {
         overflow-x: auto;
         flex-wrap: nowrap;
@@ -2898,15 +3078,24 @@ table.ut tbody tr:hover td {
     }
 }
 
-/* ─── SHARED: hide bottom-nav on tablet+desktop ─── */
+/* ─── SHARED: hide elements per breakpoint ─── */
 .bottom-nav {
     display: none
 }
 
+/* hidden by default (desktop) */
 .drawer-overlay {
     display: none
+}
+
+/* hidden by default */
+.drawer-overlay.open {
+    display: flex !important;
+    align-items: flex-end
 }
 
 .mobile-menu-btn {
     display: none
 }
+
+/* only shown in mobile via @media above */
