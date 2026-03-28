@@ -2622,7 +2622,18 @@ table.ut tbody tr:hover td {
         background: var(--surface);
         border-radius: 18px 18px 0 0;
         padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
-        border-top: 1px solid var(--border)
+        border-top: 1px solid var(--border);
+        animation: slideUp .25s ease
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%)
+        }
+
+        to {
+            transform: translateY(0)
+        }
     }
 
     .drawer-handle {

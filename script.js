@@ -658,21 +658,11 @@ renderLapHistori();
    RESPONSIVE / MOBILE NAV
 ═══════════════════════════════════════ */
 
-const MOBILE_PAGES = ['dashboard', 'perencanaan', 'stok', 'laporan'];
-const DRAWER_PAGES = ['pengaturan', 'bantuan'];
-
-function mobileNavigate(pageId) {
-    // Re-use existing navigate(), then sync bottom nav state
-    const desktopNavItem = document.querySelector(`.nav-item[onclick*="${pageId}"]`);
-    navigate(pageId, desktopNavItem);
-    syncBottomNav(pageId);
-}
+/* ═══════════════════════════════════════
+   RESPONSIVE / MOBILE NAV
+═══════════════════════════════════════ */
 
 function syncBottomNav(pageId) {
-    // Clear all bottom nav active states
-    document.querySelectorAll('.bn-item').forEach(el => el.classList.remove('active'));
-
-    // Highlight matching bottom nav item
     const bnMap = {
         dashboard: 'bn-dashboard',
         perencanaan: 'bn-perencanaan',
@@ -681,48 +671,59 @@ function syncBottomNav(pageId) {
         pengaturan: 'bn-more',
         bantuan: 'bn-more'
     };
-    const bnId = bnMap[pageId];
-    if (bnId) {
-        const el = document.getElementById(bnId);
-        if (el) el.classList.add('active');
-    }
+    document.querySelectorAll('.bn-item').forEach(el => el.classList.remove('active'));
+    const bnEl = document.getElementById(bnMap[pageId]);
+    if (bnEl) bnEl.classList.add('active');
 
-    // Sync drawer items active state
     document.querySelectorAll('.drawer-item[id]').forEach(el => el.classList.remove('active'));
-    const diId = 'di-' + pageId;
-    const diEl = document.getElementById(diId);
+    const diEl = document.getElementById('di-' + pageId);
     if (diEl) diEl.classList.add('active');
+}
+
+function mobileNavigate(pageId) {
+    // Show the right page
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const pageEl = document.getElementById('page-' + pageId);
+    if (pageEl) pageEl.classList.add('active');
+
+    // Update topbar title
+    document.getElementById('topbarTitle').innerHTML = topbarTitles[pageId] || pageId;
+
+    // Trigger data init if needed
+    if (pageId === 'dashboard') initDashboardCharts();
+    if (pageId === 'laporan') { renderLapStats(); renderLapHistori(); initLaporanCharts(); }
+    if (pageId === 'perencanaan') renderStep();
+
+    // Sync sidebar nav (desktop) & bottom nav (mobile)
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    const sidebarEl = document.querySelector(`.nav-item[onclick*="'${pageId}'"]`);
+    if (sidebarEl) sidebarEl.classList.add('active');
+
+    syncBottomNav(pageId);
 }
 
 function openDrawer() {
     const overlay = document.getElementById('drawerOverlay');
-    if (overlay) {
-        overlay.style.display = 'flex';
-        // Animate in
-        requestAnimationFrame(() => overlay.classList.add('open'));
-    }
+    if (!overlay) return;
+    overlay.style.display = 'flex';
+    requestAnimationFrame(() => overlay.classList.add('open'));
 }
 
 function closeDrawer() {
     const overlay = document.getElementById('drawerOverlay');
-    if (overlay) {
-        overlay.classList.remove('open');
-        setTimeout(() => {
-            if (!overlay.classList.contains('open')) {
-                overlay.style.display = 'none';
-            }
-        }, 300);
-    }
+    if (!overlay) return;
+    overlay.classList.remove('open');
+    setTimeout(() => {
+        if (!overlay.classList.contains('open')) overlay.style.display = 'none';
+    }, 250);
 }
 
-// Patch existing navigate() to also sync bottom nav on desktop navigation
-const _origNavigate = navigate;
-window.navigate = function (pageId, navEl) {
-    _origNavigate(pageId, navEl);
+// Also sync bottom nav when desktop sidebar nav is clicked
+const _nav = navigate;
+navigate = function (pageId, navEl) {
+    _nav(pageId, navEl);
     syncBottomNav(pageId);
 };
 
-// Init bottom nav state on load
-document.addEventListener('DOMContentLoaded', () => {
-    syncBottomNav('dashboard');
-});
+// Init
+syncBottomNav('dashboard');
