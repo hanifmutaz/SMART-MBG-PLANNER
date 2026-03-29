@@ -3,19 +3,19 @@
     --surface: #12151E;
     --surface2: #181C28;
     --surface3: #1E2236;
-    --border: rgba(255, 255, 255, 0.07);
-    --border2: rgba(255, 255, 255, 0.04);
+    --border: rgba(255, 255, 255, .07);
+    --border2: rgba(255, 255, 255, .04);
     --green: #00D68F;
-    --green-dim: rgba(0, 214, 143, 0.12);
-    --green-mid: rgba(0, 214, 143, 0.25);
+    --green-dim: rgba(0, 214, 143, .12);
+    --green-mid: rgba(0, 214, 143, .25);
     --amber: #F5A623;
-    --amber-dim: rgba(245, 166, 35, 0.1);
+    --amber-dim: rgba(245, 166, 35, .1);
     --red: #FF4D4D;
-    --red-dim: rgba(255, 77, 77, 0.1);
+    --red-dim: rgba(255, 77, 77, .1);
     --blue: #4D9EFF;
-    --blue-dim: rgba(77, 158, 255, 0.1);
+    --blue-dim: rgba(77, 158, 255, .1);
     --purple: #A78BFA;
-    --purple-dim: rgba(167, 139, 250, 0.1);
+    --purple-dim: rgba(167, 139, 250, .1);
     --text: #E8E6F0;
     --text-dim: #6B6A75;
     --text-mid: #9896A4;
@@ -36,7 +36,7 @@ body {
     background: var(--bg);
     font-family: var(--sans);
     color: var(--text);
-    overflow: hidden
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -53,26 +53,26 @@ body {
     border-radius: 2px
 }
 
-/* ─── LAYOUT ─── */
+/* ── LAYOUT ── */
 .app {
     display: grid;
     grid-template-columns: 200px 1fr;
     height: 100vh
 }
 
-/* ─── SIDEBAR ─── */
+/* ── SIDEBAR ── */
 .sidebar {
     background: var(--surface);
     border-right: 1px solid var(--border);
     display: flex;
     flex-direction: column;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .logo-area {
     padding: 16px 16px 12px;
     border-bottom: 1px solid var(--border2);
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .logo-badge {
@@ -89,7 +89,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .logo-name {
@@ -98,7 +98,7 @@ body {
     font-weight: 500;
     color: var(--text);
     letter-spacing: .08em;
-    line-height: 1.2
+    line-height: 1.2;
 }
 
 .logo-name span {
@@ -114,7 +114,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    overflow-y: auto
+    overflow-y: auto;
 }
 
 .nav-lbl {
@@ -124,7 +124,7 @@ body {
     letter-spacing: .12em;
     text-transform: uppercase;
     padding: 8px 8px 4px;
-    margin-top: 4px
+    margin-top: 4px;
 }
 
 .nav-item {
@@ -138,7 +138,7 @@ body {
     color: var(--text-mid);
     transition: all .15s;
     position: relative;
-    user-select: none
+    user-select: none;
 }
 
 .nav-item:hover {
@@ -148,7 +148,7 @@ body {
 
 .nav-item.active {
     background: var(--green-dim);
-    color: var(--green)
+    color: var(--green);
 }
 
 .nav-item.active::before {
@@ -160,7 +160,7 @@ body {
     width: 2px;
     height: 16px;
     background: var(--green);
-    border-radius: 0 2px 2px 0
+    border-radius: 0 2px 2px 0;
 }
 
 .nav-item svg {
@@ -181,7 +181,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 500
+    font-weight: 500;
 }
 
 .sidebar-user {
@@ -190,7 +190,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .avatar {
@@ -205,7 +205,7 @@ body {
     font-weight: 600;
     color: var(--green);
     font-family: var(--mono);
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .user-info p {
@@ -219,7 +219,7 @@ body {
     color: var(--text-dim)
 }
 
-/* ─── MAIN ─── */
+/* ── MAIN ── */
 .main {
     display: flex;
     flex-direction: column;
@@ -236,7 +236,7 @@ body {
     align-items: center;
     padding: 0 16px;
     gap: 10px;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .topbar-title {
@@ -246,7 +246,7 @@ body {
     flex: 1;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis
+    text-overflow: ellipsis;
 }
 
 .topbar-title b {
@@ -262,7 +262,7 @@ body {
     border: 1px solid var(--border);
     border-radius: 7px;
     padding: 5px 10px;
-    width: 160px
+    width: 160px;
 }
 
 .search-wrap input {
@@ -272,7 +272,7 @@ body {
     font-size: 11px;
     color: var(--text);
     width: 100%;
-    font-family: var(--sans)
+    font-family: var(--sans);
 }
 
 .search-wrap input::placeholder {
@@ -290,7 +290,7 @@ body {
     justify-content: center;
     cursor: pointer;
     position: relative;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .notif-dot {
@@ -301,7 +301,7 @@ body {
     height: 6px;
     background: var(--red);
     border-radius: 50%;
-    border: 1px solid var(--surface)
+    border: 1px solid var(--surface);
 }
 
 .topbar-user {
@@ -312,7 +312,7 @@ body {
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 7px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .topbar-user p {
@@ -345,7 +345,7 @@ body {
     padding: 12px 16px;
     display: flex;
     flex-direction: column;
-    gap: 10px
+    gap: 10px;
 }
 
 .footer {
@@ -360,10 +360,10 @@ body {
     font-size: 10px;
     color: var(--text-dim);
     font-family: var(--mono);
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
-/* ─── SHARED COMPONENTS ─── */
+/* ── BUTTONS ── */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -375,7 +375,7 @@ body {
     cursor: pointer;
     font-family: var(--sans);
     border: none;
-    transition: all .15s
+    transition: all .15s;
 }
 
 .btn-primary {
@@ -427,6 +427,7 @@ body {
     font-size: 10px
 }
 
+/* ── CARD ── */
 .card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -434,7 +435,7 @@ body {
     padding: 12px 14px;
     display: flex;
     flex-direction: column;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .card-header {
@@ -442,7 +443,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .card-title {
@@ -458,12 +459,13 @@ body {
     font-family: var(--mono)
 }
 
+/* ── BADGES ── */
 .badge {
     font-size: 10px;
     padding: 2px 7px;
     border-radius: 4px;
     font-family: var(--mono);
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .badge.ok,
@@ -500,6 +502,7 @@ body {
     border: 1px solid rgba(167, 139, 250, .2)
 }
 
+/* ── STATS ── */
 .stats-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -511,7 +514,7 @@ body {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 9px;
-    padding: 11px 13px
+    padding: 11px 13px;
 }
 
 .stat-top {
@@ -533,7 +536,7 @@ body {
     border-radius: 6px;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .stat-val {
@@ -565,6 +568,7 @@ body {
     color: var(--text-dim)
 }
 
+/* ── FILTER BAR ── */
 .filter-bar {
     display: flex;
     align-items: center;
@@ -574,7 +578,7 @@ body {
     border: 1px solid var(--border);
     border-radius: 9px;
     flex-shrink: 0;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 .filter-label {
@@ -601,7 +605,7 @@ body {
     color: var(--text-mid);
     cursor: pointer;
     outline: none;
-    font-family: var(--sans)
+    font-family: var(--sans);
 }
 
 .jb {
@@ -613,7 +617,7 @@ body {
     color: var(--text-dim);
     cursor: pointer;
     font-family: var(--sans);
-    transition: all .15s
+    transition: all .15s;
 }
 
 .jb.active {
@@ -626,6 +630,7 @@ body {
     margin-left: auto
 }
 
+/* ── FORMS ── */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -648,7 +653,7 @@ body {
     outline: none;
     font-family: var(--sans);
     transition: border .2s;
-    width: 100%
+    width: 100%;
 }
 
 .form-input:focus {
@@ -674,7 +679,7 @@ body {
     cursor: pointer;
     outline: none;
     font-family: var(--sans);
-    width: 100%
+    width: 100%;
 }
 
 .form-textarea {
@@ -689,7 +694,7 @@ body {
     resize: vertical;
     width: 100%;
     min-height: 80px;
-    line-height: 1.5
+    line-height: 1.5;
 }
 
 .form-textarea:focus {
@@ -720,9 +725,10 @@ body {
     justify-content: flex-end;
     margin-top: 12px;
     padding-top: 10px;
-    border-top: 1px solid var(--border2)
+    border-top: 1px solid var(--border2);
 }
 
+/* ── TOGGLE ── */
 .toggle {
     width: 36px;
     height: 20px;
@@ -731,7 +737,7 @@ body {
     cursor: pointer;
     position: relative;
     transition: background .2s;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .toggle.on {
@@ -752,7 +758,7 @@ body {
     background: #fff;
     border-radius: 50%;
     transition: left .2s;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .3)
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
 }
 
 .toggle.on::after {
@@ -768,7 +774,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
-    border-bottom: 1px solid var(--border2)
+    border-bottom: 1px solid var(--border2);
 }
 
 .toggle-row:last-child {
@@ -804,7 +810,7 @@ body {
     border-radius: 2px
 }
 
-/* ─── MODAL ─── */
+/* ── MODAL ── */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -813,7 +819,7 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 200;
-    backdrop-filter: blur(4px)
+    backdrop-filter: blur(4px);
 }
 
 .modal-overlay.open {
@@ -826,7 +832,7 @@ body {
     border-radius: 12px;
     padding: 20px;
     width: 420px;
-    max-width: 90vw
+    max-width: 90vw;
 }
 
 .modal-title {
@@ -849,7 +855,7 @@ body {
     justify-content: flex-end
 }
 
-/* ─── TOAST ─── */
+/* ── TOAST ── */
 #toast {
     position: fixed;
     bottom: 24px;
@@ -865,10 +871,10 @@ body {
     gap: 7px;
     z-index: 300;
     font-family: var(--sans);
-    box-shadow: 0 4px 20px rgba(0, 214, 143, .3)
+    box-shadow: 0 4px 20px rgba(0, 214, 143, .3);
 }
 
-/* ─── DASHBOARD ─── */
+/* ── DASHBOARD ── */
 .donut-row {
     display: flex;
     align-items: center;
@@ -897,7 +903,7 @@ body {
     background: rgba(245, 166, 35, .12);
     color: var(--amber);
     border: 1px solid rgba(245, 166, 35, .2);
-    font-family: var(--mono)
+    font-family: var(--mono);
 }
 
 .mid-row {
@@ -912,7 +918,7 @@ body {
     grid-template-columns: 2fr 1fr;
     gap: 10px;
     flex: 1;
-    min-height: 0
+    min-height: 0;
 }
 
 .chart-wrap {
@@ -939,7 +945,7 @@ body {
     cursor: pointer;
     font-family: var(--mono);
     transition: all .15s;
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .day-tab.active {
@@ -964,7 +970,7 @@ body {
     padding: 5px 0 7px;
     border-bottom: 1px solid var(--border2);
     margin-bottom: 6px;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .menu-name {
@@ -1012,7 +1018,7 @@ table.mt th {
     position: sticky;
     top: 0;
     background: var(--surface);
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 table.mt th:not(:first-child) {
@@ -1085,7 +1091,7 @@ table.mt tbody tr:hover td {
     font-family: var(--mono)
 }
 
-/* ─── PERENCANAAN ─── */
+/* ── PERENCANAAN ── */
 .stepper-wrap {
     display: flex;
     align-items: center;
@@ -1093,7 +1099,7 @@ table.mt tbody tr:hover td {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .step-item {
@@ -1114,7 +1120,7 @@ table.mt tbody tr:hover td {
     font-weight: 600;
     font-family: var(--mono);
     flex-shrink: 0;
-    transition: all .3s
+    transition: all .3s;
 }
 
 .step-circle.done {
@@ -1251,7 +1257,7 @@ table.bt tr:hover td {
     flex-direction: column;
     align-items: center;
     gap: 14px;
-    text-align: center
+    text-align: center;
 }
 
 .spinner {
@@ -1260,7 +1266,7 @@ table.bt tr:hover td {
     border-radius: 50%;
     border: 2px solid var(--border);
     border-top-color: var(--green);
-    animation: spin .8s linear infinite
+    animation: spin .8s linear infinite;
 }
 
 @keyframes spin {
@@ -1466,7 +1472,7 @@ table.rt tr.akg-row td {
     justify-content: flex-end
 }
 
-/* ─── STOK ─── */
+/* ── STOK ── */
 .notif-banner {
     background: rgba(255, 77, 77, .06);
     border: 1px solid rgba(255, 77, 77, .2);
@@ -1475,7 +1481,7 @@ table.rt tr.akg-row td {
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .notif-pills {
@@ -1510,7 +1516,7 @@ table.rt tr.akg-row td {
     color: var(--text);
     outline: none;
     font-family: var(--sans);
-    width: 220px
+    width: 220px;
 }
 
 .filter-input::placeholder {
@@ -1649,7 +1655,7 @@ table.st tbody tr:hover .act-btns {
     border-bottom: 1px solid var(--border2)
 }
 
-/* ─── LAPORAN ─── */
+/* ── LAPORAN ── */
 .charts-row {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
@@ -1724,13 +1730,13 @@ table.ht tbody tr:hover td {
     font-family: var(--mono)
 }
 
-/* ─── SETTINGS ─── */
+/* ── SETTINGS ── */
 .settings-body {
-    flex: 1;
     display: grid;
     grid-template-columns: 180px 1fr;
     overflow: hidden;
-    min-height: 0
+    min-height: 0;
+    flex: 1;
 }
 
 .settings-nav {
@@ -1739,7 +1745,7 @@ table.ht tbody tr:hover td {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    overflow-y: auto
+    overflow-y: auto;
 }
 
 .stab {
@@ -1757,7 +1763,7 @@ table.ht tbody tr:hover td {
     background: none;
     width: 100%;
     text-align: left;
-    font-family: var(--sans)
+    font-family: var(--sans);
 }
 
 .stab:hover {
@@ -1779,7 +1785,7 @@ table.ht tbody tr:hover td {
     width: 2px;
     height: 16px;
     background: var(--green);
-    border-radius: 0 2px 2px 0
+    border-radius: 0 2px 2px 0;
 }
 
 .stab svg {
@@ -1855,7 +1861,7 @@ table.ht tbody tr:hover td {
     color: var(--green);
     font-family: var(--mono);
     border: 2px solid rgba(0, 214, 143, .3);
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .akg-group {
@@ -1945,13 +1951,13 @@ table.ut tbody tr:hover td {
     background: var(--surface2)
 }
 
-/* ─── BANTUAN ─── */
+/* ── BANTUAN ── */
 .help-body {
-    flex: 1;
     display: grid;
     grid-template-columns: 180px 1fr;
     overflow: hidden;
-    min-height: 0
+    min-height: 0;
+    flex: 1;
 }
 
 .help-nav {
@@ -1959,7 +1965,7 @@ table.ut tbody tr:hover td {
     padding: 10px 8px;
     display: flex;
     flex-direction: column;
-    gap: 2px
+    gap: 2px;
 }
 
 .htab {
@@ -1977,7 +1983,7 @@ table.ut tbody tr:hover td {
     background: none;
     width: 100%;
     text-align: left;
-    font-family: var(--sans)
+    font-family: var(--sans);
 }
 
 .htab:hover {
@@ -1999,7 +2005,7 @@ table.ut tbody tr:hover td {
     width: 2px;
     height: 16px;
     background: var(--green);
-    border-radius: 0 2px 2px 0
+    border-radius: 0 2px 2px 0;
 }
 
 .htab svg {
@@ -2059,7 +2065,7 @@ table.ut tbody tr:hover td {
     justify-content: center;
     flex-shrink: 0;
     transition: all .2s;
-    color: var(--text-dim)
+    color: var(--text-dim);
 }
 
 .faq-item.open .faq-icon {
@@ -2157,7 +2163,7 @@ table.ut tbody tr:hover td {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-top: 1px
+    margin-top: 1px;
 }
 
 .contact-grid {
@@ -2280,8 +2286,7 @@ table.ut tbody tr:hover td {
     color: var(--amber)
 }
 
-
-/* ─── DEFAULT: hidden on desktop, shown via media queries below ─── */
+/* ── BOTTOM NAV & DRAWER (hidden desktop) ── */
 .bottom-nav {
     display: none
 }
@@ -2299,20 +2304,12 @@ table.ut tbody tr:hover td {
     display: none
 }
 
-/* ═══════════════════════════════════════════════════════════
-   RESPONSIVE SYSTEM
-   Breakpoints:
-     Mobile  : < 768px
-     Tablet  : 768px – 1024px
-     Desktop : > 1024px
-═══════════════════════════════════════════════════════════ */
 
-/* ───────────────────────────────────────
-   TABLET: icon-only sidebar + tooltip
-─────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════
+   TABLET  768px – 1024px
+════════════════════════════════════════════════════════ */
 @media (min-width: 768px) and (max-width: 1024px) {
 
-    /* ── Mirror mobile: hide sidebar, use bottom nav ── */
     .sidebar {
         display: none
     }
@@ -2330,7 +2327,6 @@ table.ut tbody tr:hover td {
         height: 100vh
     }
 
-    /* Topbar compact */
     .topbar {
         height: 52px;
         min-height: 52px;
@@ -2346,18 +2342,15 @@ table.ut tbody tr:hover td {
         display: flex
     }
 
-    /* Content: pad bottom for nav */
     .content {
         padding: 12px 16px 88px;
         gap: 10px
     }
 
-    /* Footer hidden */
     .footer {
         display: none
     }
 
-    /* Show bottom nav */
     .bottom-nav {
         display: flex
     }
@@ -2374,7 +2367,7 @@ table.ut tbody tr:hover td {
         padding: 0 8px;
         padding-bottom: env(safe-area-inset-bottom);
         align-items: center;
-        gap: 0
+        gap: 0;
     }
 
     .bn-item {
@@ -2391,7 +2384,7 @@ table.ut tbody tr:hover td {
         height: 56px;
         position: relative;
         -webkit-tap-highlight-color: transparent;
-        user-select: none
+        user-select: none;
     }
 
     .bn-item svg {
@@ -2440,7 +2433,7 @@ table.ut tbody tr:hover td {
         position: relative;
         -webkit-tap-highlight-color: transparent;
         user-select: none;
-        margin-top: -28px
+        margin-top: -28px;
     }
 
     .bn-center-bubble {
@@ -2451,13 +2444,10 @@ table.ut tbody tr:hover td {
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow:
-            0 8px 24px rgba(0, 214, 143, 0.45),
-            0 2px 8px rgba(0, 0, 0, .3),
-            inset 0 1px 0 rgba(255, 255, 255, .2);
+        box-shadow: 0 8px 24px rgba(0, 214, 143, .45), 0 2px 8px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .2);
         transition: transform .2s, box-shadow .2s;
         position: relative;
-        overflow: hidden
+        overflow: hidden;
     }
 
     .bn-center-bubble::before {
@@ -2469,7 +2459,7 @@ table.ut tbody tr:hover td {
         height: 16px;
         background: rgba(255, 255, 255, .25);
         border-radius: 50%;
-        filter: blur(4px)
+        filter: blur(4px);
     }
 
     .bn-center-bubble svg {
@@ -2479,7 +2469,7 @@ table.ut tbody tr:hover td {
     }
 
     .bn-center:active .bn-center-bubble {
-        transform: scale(0.93);
+        transform: scale(.93);
         box-shadow: 0 4px 12px rgba(0, 214, 143, .35), 0 1px 4px rgba(0, 0, 0, .3)
     }
 
@@ -2509,17 +2499,16 @@ table.ut tbody tr:hover td {
         align-items: center;
         justify-content: center;
         border: 1.5px solid var(--surface);
-        font-weight: 600
+        font-weight: 600;
     }
 
-    /* Drawer */
     .drawer-overlay {
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, .6);
         z-index: 150;
         backdrop-filter: blur(2px);
-        align-items: flex-end
+        align-items: flex-end;
     }
 
     .drawer-overlay.open {
@@ -2532,7 +2521,7 @@ table.ut tbody tr:hover td {
         border-radius: 20px 20px 0 0;
         padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
         border-top: 1px solid var(--border);
-        animation: slideUp .25s ease
+        animation: slideUp .25s ease;
     }
 
     .drawer-handle {
@@ -2562,7 +2551,7 @@ table.ut tbody tr:hover td {
         color: var(--text-mid);
         font-size: 13px;
         font-weight: 500;
-        transition: color .15s
+        transition: color .15s;
     }
 
     .drawer-item:last-child {
@@ -2579,7 +2568,7 @@ table.ut tbody tr:hover td {
         color: var(--green)
     }
 
-    /* Grid adjustments */
+    /* Grid */
     .stats-row {
         grid-template-columns: repeat(2, 1fr)
     }
@@ -2590,7 +2579,30 @@ table.ut tbody tr:hover td {
 
     .bot-row {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto
+        grid-template-rows: auto auto;
+        flex: none;
+        min-height: unset;
+        height: auto
+    }
+
+    .bot-row .card {
+        min-height: unset;
+        height: auto;
+        flex: none
+    }
+
+    .menu-table-wrap {
+        max-height: 300px;
+        overflow-y: auto;
+        min-height: unset;
+        flex: none
+    }
+
+    .stok-list {
+        max-height: 300px;
+        overflow-y: auto;
+        min-height: unset;
+        flex: none
     }
 
     .charts-row {
@@ -2598,7 +2610,10 @@ table.ut tbody tr:hover td {
     }
 
     .bottom-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+        min-height: unset;
+        flex: none;
+        height: auto
     }
 
     .stok-main-grid {
@@ -2625,37 +2640,64 @@ table.ut tbody tr:hover td {
         grid-template-columns: repeat(2, 1fr)
     }
 
-    /* Settings & help tabs */
+    /* Settings & help — pill nav */
     .settings-body {
-        grid-template-columns: 1fr
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        min-height: 0
     }
 
     .settings-nav {
         flex-direction: row;
+        flex-shrink: 0;
         border-right: none;
         border-bottom: 1px solid var(--border);
         padding: 8px 12px;
         overflow-x: auto;
         gap: 6px;
-        scrollbar-width: none
+        scrollbar-width: none;
+        flex-wrap: nowrap;
+        align-items: center;
+        height: auto;
     }
 
     .settings-nav::-webkit-scrollbar {
         display: none
     }
 
+    .settings-nav .nav-lbl {
+        font-size: 9px;
+        font-weight: 700;
+        color: var(--text-dim);
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        padding: 0 2px;
+        margin: 0;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
     .stab {
         flex-direction: row;
-        padding: 7px 14px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 14px;
+        height: 32px;
         font-size: 12px;
         gap: 6px;
         white-space: nowrap;
         border-radius: 20px;
         border: 1px solid var(--border);
-        min-width: auto
+        min-width: auto;
+        width: auto;
+        background: transparent;
+        flex-shrink: 0;
     }
 
     .stab.active {
+        background: var(--green-dim);
+        color: var(--green);
         border-color: rgba(0, 214, 143, .3)
     }
 
@@ -2663,18 +2705,36 @@ table.ut tbody tr:hover td {
         display: none
     }
 
+    .stab svg {
+        width: 13px;
+        height: 13px
+    }
+
+    .settings-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 14px 16px
+    }
+
     .help-body {
-        grid-template-columns: 1fr
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        min-height: 0
     }
 
     .help-nav {
         flex-direction: row;
+        flex-shrink: 0;
         border-right: none;
         border-bottom: 1px solid var(--border);
         padding: 8px 12px;
         overflow-x: auto;
         gap: 6px;
-        scrollbar-width: none
+        scrollbar-width: none;
+        flex-wrap: nowrap;
+        align-items: center;
+        height: auto;
     }
 
     .help-nav::-webkit-scrollbar {
@@ -2683,16 +2743,24 @@ table.ut tbody tr:hover td {
 
     .htab {
         flex-direction: row;
-        padding: 7px 14px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 14px;
+        height: 32px;
         font-size: 12px;
         gap: 6px;
         white-space: nowrap;
         border-radius: 20px;
         border: 1px solid var(--border);
-        min-width: auto
+        min-width: auto;
+        width: auto;
+        background: transparent;
+        flex-shrink: 0;
     }
 
     .htab.active {
+        background: var(--green-dim);
+        color: var(--green);
         border-color: rgba(0, 214, 143, .3)
     }
 
@@ -2700,7 +2768,18 @@ table.ut tbody tr:hover td {
         display: none
     }
 
-    /* Scrollable filter bar */
+    .htab svg {
+        width: 13px;
+        height: 13px
+    }
+
+    .help-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 14px 16px
+    }
+
+    /* Misc */
     .filter-bar {
         overflow-x: auto;
         flex-wrap: nowrap;
@@ -2747,9 +2826,11 @@ table.ut tbody tr:hover td {
 }
 
 
+/* ════════════════════════════════════════════════════════
+   MOBILE  < 768px
+════════════════════════════════════════════════════════ */
 @media (max-width: 767px) {
 
-    /* Hide sidebar */
     .sidebar {
         display: none
     }
@@ -2767,7 +2848,6 @@ table.ut tbody tr:hover td {
         height: 100vh
     }
 
-    /* Topbar compact */
     .topbar {
         height: 52px;
         min-height: 52px;
@@ -2787,25 +2867,19 @@ table.ut tbody tr:hover td {
         display: flex
     }
 
-    /* Content: pad bottom for nav */
     .content {
-        padding: 12px 14px 80px;
+        padding: 12px 14px 96px;
         gap: 10px
     }
 
-    /* Footer hidden */
     .footer {
         display: none
     }
 
-    /* ── SHOW bottom nav on mobile ── */
     .bottom-nav {
         display: flex
     }
 
-    /* ════════════════════════════════
-       BOTTOM NAV — App style
-    ════════════════════════════════ */
     .bottom-nav {
         position: fixed;
         bottom: 0;
@@ -2818,10 +2892,9 @@ table.ut tbody tr:hover td {
         padding: 0 8px;
         padding-bottom: env(safe-area-inset-bottom);
         align-items: center;
-        gap: 0
+        gap: 0;
     }
 
-    /* Regular nav items */
     .bn-item {
         flex: 1;
         display: flex;
@@ -2836,7 +2909,7 @@ table.ut tbody tr:hover td {
         height: 56px;
         position: relative;
         -webkit-tap-highlight-color: transparent;
-        user-select: none
+        user-select: none;
     }
 
     .bn-item svg {
@@ -2860,7 +2933,6 @@ table.ut tbody tr:hover td {
         transform: translateY(-1px)
     }
 
-    /* Active pill indicator */
     .bn-item.active .bn-active-dot {
         display: block
     }
@@ -2875,7 +2947,6 @@ table.ut tbody tr:hover td {
         border-radius: 50%
     }
 
-    /* ── CENTER FLOATING BUTTON ── */
     .bn-center {
         flex: 0 0 72px;
         display: flex;
@@ -2887,7 +2958,7 @@ table.ut tbody tr:hover td {
         position: relative;
         -webkit-tap-highlight-color: transparent;
         user-select: none;
-        margin-top: -28px
+        margin-top: -28px;
     }
 
     .bn-center-bubble {
@@ -2898,16 +2969,12 @@ table.ut tbody tr:hover td {
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow:
-            0 8px 24px rgba(0, 214, 143, 0.45),
-            0 2px 8px rgba(0, 0, 0, .3),
-            inset 0 1px 0 rgba(255, 255, 255, .2);
+        box-shadow: 0 8px 24px rgba(0, 214, 143, .45), 0 2px 8px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .2);
         transition: transform .2s, box-shadow .2s;
         position: relative;
-        overflow: hidden
+        overflow: hidden;
     }
 
-    /* Shine effect */
     .bn-center-bubble::before {
         content: '';
         position: absolute;
@@ -2917,7 +2984,7 @@ table.ut tbody tr:hover td {
         height: 16px;
         background: rgba(255, 255, 255, .25);
         border-radius: 50%;
-        filter: blur(4px)
+        filter: blur(4px);
     }
 
     .bn-center-bubble svg {
@@ -2927,16 +2994,13 @@ table.ut tbody tr:hover td {
     }
 
     .bn-center:active .bn-center-bubble {
-        transform: scale(0.93);
+        transform: scale(.93);
         box-shadow: 0 4px 12px rgba(0, 214, 143, .35), 0 1px 4px rgba(0, 0, 0, .3)
     }
 
     .bn-center.active .bn-center-bubble {
         background: linear-gradient(145deg, #00E89A, #009A63);
-        box-shadow:
-            0 6px 20px rgba(0, 214, 143, .5),
-            0 2px 8px rgba(0, 0, 0, .3),
-            inset 0 1px 0 rgba(255, 255, 255, .2)
+        box-shadow: 0 6px 20px rgba(0, 214, 143, .5), 0 2px 8px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .2)
     }
 
     .bn-center span {
@@ -2946,7 +3010,6 @@ table.ut tbody tr:hover td {
         font-family: var(--sans)
     }
 
-    /* Badge on stok item */
     .bn-item .bn-badge {
         position: absolute;
         top: 5px;
@@ -2962,17 +3025,16 @@ table.ut tbody tr:hover td {
         align-items: center;
         justify-content: center;
         border: 1.5px solid var(--surface);
-        font-weight: 600
+        font-weight: 600;
     }
 
-    /* ── DRAWER ── */
     .drawer-overlay {
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, .6);
         z-index: 150;
         backdrop-filter: blur(2px);
-        align-items: flex-end
+        align-items: flex-end;
     }
 
     .drawer-overlay.open {
@@ -2985,7 +3047,7 @@ table.ut tbody tr:hover td {
         border-radius: 20px 20px 0 0;
         padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
         border-top: 1px solid var(--border);
-        animation: slideUp .25s ease
+        animation: slideUp .25s ease;
     }
 
     @keyframes slideUp {
@@ -3026,7 +3088,7 @@ table.ut tbody tr:hover td {
         font-size: 13px;
         font-weight: 500;
         transition: color .15s;
-        -webkit-tap-highlight-color: transparent
+        -webkit-tap-highlight-color: transparent;
     }
 
     .drawer-item:last-child {
@@ -3047,18 +3109,44 @@ table.ut tbody tr:hover td {
         stroke: var(--green)
     }
 
-    /* Grid overrides */
+    /* Grid */
     .stats-row {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px
     }
 
     .mid-row {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+        min-height: unset
     }
 
     .bot-row {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        flex: none;
+        min-height: unset;
+        height: auto
+    }
+
+    .bot-row .card {
+        min-height: unset;
+        height: auto;
+        flex: none;
+        overflow: hidden
+    }
+
+    .menu-table-wrap {
+        max-height: 260px;
+        overflow-y: auto;
+        min-height: unset;
+        flex: none
+    }
+
+    .stok-list {
+        max-height: 260px;
+        overflow-y: auto;
+        min-height: unset;
+        flex: none
     }
 
     .charts-row {
@@ -3066,7 +3154,10 @@ table.ut tbody tr:hover td {
     }
 
     .bottom-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+        min-height: unset;
+        flex: none;
+        height: auto
     }
 
     .stok-main-grid {
@@ -3097,38 +3188,65 @@ table.ut tbody tr:hover td {
         grid-template-columns: repeat(2, 1fr)
     }
 
-    /* Settings & help tabs */
+    /* Settings & help — pill nav */
     .settings-body {
-        grid-template-columns: 1fr
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        min-height: 0
     }
 
     .settings-nav {
         flex-direction: row;
+        flex-shrink: 0;
         border-right: none;
         border-bottom: 1px solid var(--border);
         padding: 8px 12px;
         overflow-x: auto;
         gap: 6px;
+        scrollbar-width: none;
+        flex-wrap: nowrap;
+        align-items: center;
+        height: auto;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none
     }
 
     .settings-nav::-webkit-scrollbar {
         display: none
     }
 
+    .settings-nav .nav-lbl {
+        font-size: 9px;
+        font-weight: 700;
+        color: var(--text-dim);
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        padding: 0 2px;
+        margin: 0;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
     .stab {
         flex-direction: row;
-        padding: 7px 14px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 14px;
+        height: 32px;
         font-size: 12px;
         gap: 6px;
         white-space: nowrap;
         border-radius: 20px;
         border: 1px solid var(--border);
-        min-width: auto
+        min-width: auto;
+        width: auto;
+        background: transparent;
+        flex-shrink: 0;
     }
 
     .stab.active {
+        background: var(--green-dim);
+        color: var(--green);
         border-color: rgba(0, 214, 143, .3)
     }
 
@@ -3136,19 +3254,37 @@ table.ut tbody tr:hover td {
         display: none
     }
 
+    .stab svg {
+        width: 13px;
+        height: 13px
+    }
+
+    .settings-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 14px 16px
+    }
+
     .help-body {
-        grid-template-columns: 1fr
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        min-height: 0
     }
 
     .help-nav {
         flex-direction: row;
+        flex-shrink: 0;
         border-right: none;
         border-bottom: 1px solid var(--border);
         padding: 8px 12px;
         overflow-x: auto;
         gap: 6px;
+        scrollbar-width: none;
+        flex-wrap: nowrap;
+        align-items: center;
+        height: auto;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none
     }
 
     .help-nav::-webkit-scrollbar {
@@ -3157,16 +3293,24 @@ table.ut tbody tr:hover td {
 
     .htab {
         flex-direction: row;
-        padding: 7px 14px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 14px;
+        height: 32px;
         font-size: 12px;
         gap: 6px;
         white-space: nowrap;
         border-radius: 20px;
         border: 1px solid var(--border);
-        min-width: auto
+        min-width: auto;
+        width: auto;
+        background: transparent;
+        flex-shrink: 0;
     }
 
     .htab.active {
+        background: var(--green-dim);
+        color: var(--green);
         border-color: rgba(0, 214, 143, .3)
     }
 
@@ -3174,7 +3318,51 @@ table.ut tbody tr:hover td {
         display: none
     }
 
-    /* Scrollable filter bar */
+    .htab svg {
+        width: 13px;
+        height: 13px
+    }
+
+    .help-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 14px 16px
+    }
+
+    /* Misc */
+    .stat-val {
+        font-size: 18px
+    }
+
+    .form-card {
+        padding: 14px
+    }
+
+    .card {
+        padding: 10px 12px
+    }
+
+    .bahan-table-wrap {
+        max-height: 180px
+    }
+
+    .stepper-wrap {
+        padding: 10px 12px;
+        overflow-x: auto
+    }
+
+    .step-connector {
+        width: 16px
+    }
+
+    .step-info span {
+        display: none
+    }
+
+    .step-info p {
+        font-size: 10px
+    }
+
     .filter-bar {
         overflow-x: auto;
         flex-wrap: nowrap;
@@ -3197,41 +3385,6 @@ table.ut tbody tr:hover td {
     table.rt,
     table.bt {
         min-width: 560px
-    }
-
-    /* Stepper */
-    .stepper-wrap {
-        padding: 10px 12px;
-        overflow-x: auto
-    }
-
-    .step-connector {
-        width: 16px
-    }
-
-    .step-info span {
-        display: none
-    }
-
-    .step-info p {
-        font-size: 10px
-    }
-
-    /* Misc */
-    .stat-val {
-        font-size: 18px
-    }
-
-    .form-card {
-        padding: 14px
-    }
-
-    .card {
-        padding: 10px 12px
-    }
-
-    .bahan-table-wrap {
-        max-height: 180px
     }
 
     .day-tabs {
