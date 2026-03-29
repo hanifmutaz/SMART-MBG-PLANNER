@@ -2281,11 +2281,29 @@ table.ut tbody tr:hover td {
 }
 
 
+/* ─── DEFAULT: hidden on desktop, shown via media queries below ─── */
+.bottom-nav {
+    display: none
+}
+
+.drawer-overlay {
+    display: none
+}
+
+.drawer-overlay.open {
+    display: flex !important;
+    align-items: flex-end
+}
+
+.mobile-menu-btn {
+    display: none
+}
+
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE SYSTEM
    Breakpoints:
      Mobile  : < 768px
-     Tablet  : 768px – 1024px  ← iPad, iPad Mini, iPad Pro 11"
+     Tablet  : 768px – 1024px
      Desktop : > 1024px
 ═══════════════════════════════════════════════════════════ */
 
@@ -2293,164 +2311,272 @@ table.ut tbody tr:hover td {
    TABLET: icon-only sidebar + tooltip
 ─────────────────────────────────────── */
 @media (min-width: 768px) and (max-width: 1024px) {
+
+    /* ── Mirror mobile: hide sidebar, use bottom nav ── */
+    .sidebar {
+        display: none
+    }
+
     .app {
-        grid-template-columns: 58px 1fr
+        grid-template-columns: 1fr
     }
 
-    /* Logo: icon only */
-    .logo-area {
-        padding: 14px 0;
-        display: flex;
-        justify-content: center
+    html,
+    body {
+        overflow: hidden
     }
 
-    .logo-name {
-        display: none
+    .main {
+        height: 100vh
     }
 
-    .logo-badge {
-        justify-content: center
+    /* Topbar compact */
+    .topbar {
+        height: 52px;
+        min-height: 52px;
+        padding: 0 16px
     }
 
-    /* Nav: icon-only with tooltip */
-    .nav {
-        padding: 8px 6px;
-        gap: 4px;
-        align-items: center
-    }
-
-    .nav-lbl {
-        display: none
-    }
-
-    .nav-item {
-        justify-content: center;
-        padding: 10px 0;
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        position: relative;
-        /* tooltip trigger */
-    }
-
-    /* Hide text labels in nav */
-    .nav-item>span:not(.nav-badge) {
-        display: none
-    }
-
-    .nav-item svg {
-        width: 18px;
-        height: 18px
-    }
-
-    /* Active indicator: dot instead of left bar */
-    .nav-item.active::before {
-        display: none
-    }
-
-    .nav-item.active::after {
-        content: '';
-        position: absolute;
-        right: -4px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 3px;
-        height: 20px;
-        background: var(--green);
-        border-radius: 2px 0 0 2px
-    }
-
-    /* Badge repositioned */
-    .nav-badge {
-        position: absolute;
-        top: 3px;
-        right: 3px;
-        width: 14px;
-        height: 14px;
-        font-size: 8px
-    }
-
-    /* TOOLTIP */
-    .nav-item::before {
-        content: attr(data-tooltip);
-        position: absolute;
-        left: calc(100% + 12px);
-        top: 50%;
-        transform: translateY(-50%);
-        background: var(--surface3);
-        border: 1px solid var(--border);
-        color: var(--text);
-        font-size: 11px;
-        font-weight: 500;
-        padding: 5px 10px;
-        border-radius: 7px;
-        white-space: nowrap;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity .15s, transform .15s;
-        transform: translateY(-50%) translateX(-4px);
-        z-index: 100;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, .4)
-    }
-
-    /* Tooltip arrow */
-    .nav-item::after {
-        content: '';
-        position: absolute;
-        left: calc(100% + 6px);
-        top: 50%;
-        transform: translateY(-50%);
-        border: 5px solid transparent;
-        border-right-color: var(--border);
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity .15s;
-        z-index: 101
-    }
-
-    /* Override active::after with tooltip arrow logic */
-    .nav-item.active::after {
-        border: none;
-        right: auto;
-        left: calc(100% + 6px);
-        top: 50%;
-        transform: translateY(-50%);
-        border: 5px solid transparent;
-        border-right-color: var(--border);
-        pointer-events: none;
-        width: auto;
-        height: auto;
-        background: none;
-        border-radius: 0
-    }
-
-    .nav-item:hover::before {
-        opacity: 1;
-        transform: translateY(-50%) translateX(0)
-    }
-
-    .nav-item:hover::after {
-        opacity: 1
-    }
-
-    /* User area */
-    .sidebar-user {
-        padding: 10px 0;
-        justify-content: center
-    }
-
-    .user-info {
-        display: none
-    }
-
-    /* Topbar */
+    .topbar-user,
     .search-wrap {
         display: none
     }
 
-    .topbar-user p,
-    .topbar-user span {
+    .mobile-menu-btn {
+        display: flex
+    }
+
+    /* Content: pad bottom for nav */
+    .content {
+        padding: 12px 16px 88px;
+        gap: 10px
+    }
+
+    /* Footer hidden */
+    .footer {
         display: none
+    }
+
+    /* Show bottom nav */
+    .bottom-nav {
+        display: flex
+    }
+
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 72px;
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        z-index: 100;
+        padding: 0 8px;
+        padding-bottom: env(safe-area-inset-bottom);
+        align-items: center;
+        gap: 0
+    }
+
+    .bn-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+        color: var(--text-dim);
+        transition: color .2s;
+        border-radius: 12px;
+        height: 56px;
+        position: relative;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none
+    }
+
+    .bn-item svg {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+        transition: transform .2s
+    }
+
+    .bn-item span {
+        font-size: 10px;
+        font-weight: 500;
+        font-family: var(--sans)
+    }
+
+    .bn-item.active {
+        color: var(--green)
+    }
+
+    .bn-item.active svg {
+        transform: translateY(-1px)
+    }
+
+    .bn-item.active .bn-active-dot {
+        display: block
+    }
+
+    .bn-active-dot {
+        display: none;
+        position: absolute;
+        bottom: 4px;
+        width: 4px;
+        height: 4px;
+        background: var(--green);
+        border-radius: 50%
+    }
+
+    .bn-center {
+        flex: 0 0 72px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+        position: relative;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        margin-top: -28px
+    }
+
+    .bn-center-bubble {
+        width: 58px;
+        height: 58px;
+        border-radius: 20px;
+        background: linear-gradient(145deg, #00E89A, #00B876);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+            0 8px 24px rgba(0, 214, 143, 0.45),
+            0 2px 8px rgba(0, 0, 0, .3),
+            inset 0 1px 0 rgba(255, 255, 255, .2);
+        transition: transform .2s, box-shadow .2s;
+        position: relative;
+        overflow: hidden
+    }
+
+    .bn-center-bubble::before {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 8px;
+        width: 36px;
+        height: 16px;
+        background: rgba(255, 255, 255, .25);
+        border-radius: 50%;
+        filter: blur(4px)
+    }
+
+    .bn-center-bubble svg {
+        color: #000;
+        position: relative;
+        z-index: 1
+    }
+
+    .bn-center:active .bn-center-bubble {
+        transform: scale(0.93);
+        box-shadow: 0 4px 12px rgba(0, 214, 143, .35), 0 1px 4px rgba(0, 0, 0, .3)
+    }
+
+    .bn-center.active .bn-center-bubble {
+        background: linear-gradient(145deg, #00E89A, #009A63)
+    }
+
+    .bn-center span {
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--green);
+        font-family: var(--sans)
+    }
+
+    .bn-item .bn-badge {
+        position: absolute;
+        top: 5px;
+        right: calc(50% - 18px);
+        width: 15px;
+        height: 15px;
+        background: var(--red);
+        border-radius: 50%;
+        font-size: 8px;
+        font-family: var(--mono);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.5px solid var(--surface);
+        font-weight: 600
+    }
+
+    /* Drawer */
+    .drawer-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .6);
+        z-index: 150;
+        backdrop-filter: blur(2px);
+        align-items: flex-end
+    }
+
+    .drawer-overlay.open {
+        display: flex !important
+    }
+
+    .drawer {
+        width: 100%;
+        background: var(--surface);
+        border-radius: 20px 20px 0 0;
+        padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+        border-top: 1px solid var(--border);
+        animation: slideUp .25s ease
+    }
+
+    .drawer-handle {
+        width: 36px;
+        height: 4px;
+        background: var(--border);
+        border-radius: 2px;
+        margin: 0 auto 16px
+    }
+
+    .drawer-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border2)
+    }
+
+    .drawer-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border2);
+        cursor: pointer;
+        color: var(--text-mid);
+        font-size: 13px;
+        font-weight: 500;
+        transition: color .15s
+    }
+
+    .drawer-item:last-child {
+        border-bottom: none
+    }
+
+    .drawer-item svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0
+    }
+
+    .drawer-item.active {
+        color: var(--green)
     }
 
     /* Grid adjustments */
@@ -2491,7 +2617,15 @@ table.ut tbody tr:hover td {
         grid-template-columns: 1fr 1fr
     }
 
-    /* Settings & help: collapse side nav */
+    .form-grid-2 {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .result-stats {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    /* Settings & help tabs */
     .settings-body {
         grid-template-columns: 1fr
     }
@@ -2500,29 +2634,33 @@ table.ut tbody tr:hover td {
         flex-direction: row;
         border-right: none;
         border-bottom: 1px solid var(--border);
-        padding: 6px 10px;
+        padding: 8px 12px;
         overflow-x: auto;
-        gap: 4px
+        gap: 6px;
+        scrollbar-width: none
+    }
+
+    .settings-nav::-webkit-scrollbar {
+        display: none
     }
 
     .stab {
-        flex-direction: column;
-        padding: 6px 10px;
-        font-size: 10px;
-        gap: 4px;
+        flex-direction: row;
+        padding: 7px 14px;
+        font-size: 12px;
+        gap: 6px;
         white-space: nowrap;
-        border-radius: 8px;
-        min-width: 64px;
-        align-items: center
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        min-width: auto
+    }
+
+    .stab.active {
+        border-color: rgba(0, 214, 143, .3)
     }
 
     .stab.active::before {
         display: none
-    }
-
-    .stab svg {
-        width: 16px;
-        height: 16px
     }
 
     .help-body {
@@ -2533,40 +2671,82 @@ table.ut tbody tr:hover td {
         flex-direction: row;
         border-right: none;
         border-bottom: 1px solid var(--border);
-        padding: 6px 10px;
+        padding: 8px 12px;
         overflow-x: auto;
-        gap: 4px
+        gap: 6px;
+        scrollbar-width: none
+    }
+
+    .help-nav::-webkit-scrollbar {
+        display: none
     }
 
     .htab {
-        flex-direction: column;
-        padding: 6px 10px;
-        font-size: 10px;
-        gap: 4px;
+        flex-direction: row;
+        padding: 7px 14px;
+        font-size: 12px;
+        gap: 6px;
         white-space: nowrap;
-        border-radius: 8px;
-        min-width: 64px;
-        align-items: center
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        min-width: auto
+    }
+
+    .htab.active {
+        border-color: rgba(0, 214, 143, .3)
     }
 
     .htab.active::before {
         display: none
     }
 
-    .htab svg {
-        width: 16px;
-        height: 16px
+    /* Scrollable filter bar */
+    .filter-bar {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none
     }
 
-    .result-stats {
-        grid-template-columns: repeat(2, 1fr)
+    .filter-bar::-webkit-scrollbar {
+        display: none
+    }
+
+    .table-wrap {
+        overflow-x: auto
+    }
+
+    table.st,
+    table.ht,
+    table.ut,
+    table.mt,
+    table.rt,
+    table.bt {
+        min-width: 560px
+    }
+
+    .day-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        padding-bottom: 2px
+    }
+
+    .day-tabs::-webkit-scrollbar {
+        display: none
+    }
+
+    .menu-day-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none
+    }
+
+    .menu-day-tabs::-webkit-scrollbar {
+        display: none
     }
 }
 
 
-/* ───────────────────────────────────────
-   MOBILE: bottom nav (app-style)
-─────────────────────────────────────── */
 @media (max-width: 767px) {
 
     /* Hide sidebar */
@@ -2618,11 +2798,15 @@ table.ut tbody tr:hover td {
         display: none
     }
 
+    /* ── SHOW bottom nav on mobile ── */
+    .bottom-nav {
+        display: flex
+    }
+
     /* ════════════════════════════════
        BOTTOM NAV — App style
     ════════════════════════════════ */
     .bottom-nav {
-        display: flex;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -2703,7 +2887,6 @@ table.ut tbody tr:hover td {
         position: relative;
         -webkit-tap-highlight-color: transparent;
         user-select: none;
-        /* push it up */
         margin-top: -28px
     }
 
@@ -2724,7 +2907,7 @@ table.ut tbody tr:hover td {
         overflow: hidden
     }
 
-    /* shine effect */
+    /* Shine effect */
     .bn-center-bubble::before {
         content: '';
         position: absolute;
@@ -2761,10 +2944,6 @@ table.ut tbody tr:hover td {
         font-weight: 600;
         color: var(--green);
         font-family: var(--sans)
-    }
-
-    .bn-center.active span {
-        color: var(--green)
     }
 
     /* Badge on stok item */
@@ -3077,25 +3256,3 @@ table.ut tbody tr:hover td {
         display: none
     }
 }
-
-/* ─── SHARED: hide elements per breakpoint ─── */
-.bottom-nav {
-    display: none
-}
-
-/* hidden by default (desktop) */
-.drawer-overlay {
-    display: none
-}
-
-/* hidden by default */
-.drawer-overlay.open {
-    display: flex !important;
-    align-items: flex-end
-}
-
-.mobile-menu-btn {
-    display: none
-}
-
-/* only shown in mobile via @media above */
